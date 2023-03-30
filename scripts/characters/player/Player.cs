@@ -3,34 +3,41 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+	private float acceleration = 500f;
+	private float friction = 200f;
 
-
-	public const float Speed = 300.0f;
-	public const float JumpVelocity = -400.0f;
+	private float rowForce = 200f;
+	private float maxRowSpeed = 100f;
+	private Vector2 velocity = Vector2.Zero;
 
 	public override void _PhysicsProcess(double delta)
 	{
-		Vector2 velocity = Velocity;
+		
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
 
+		velocity += direction * acceleration * (float)delta;
 
+		float frictionForce = friction * (float)delta;
 
-
-		if (direction != Vector2.Zero)
+		if(velocity.Length() > frictionForce)
 		{
-			velocity.X = direction.X * Speed;
-			velocity.Y = direction.Y * Speed;
+			velocity -= velocity.Normalized() * frictionForce;
 		}
 		else
 		{
-			velocity.Y = Mathf.MoveToward(Velocity.Y, 0, Speed);
-			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			velocity = Vector2.Zero;
 		}
 
-		Velocity = velocity;
-		MoveAndSlide();
-		LookAtDirection(Velocity);
+		KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
+
+		if(collision != null)
+		{
+			 velocity = velocity.Slide(collision.GetNormal());
+		}
+
+		LookAtDirection(velocity);
 	}
+	
 
 	  private void LookAtDirection(Vector2 direction)
     {

@@ -1,10 +1,12 @@
-[gd_scene load_steps=4 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=5 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Texture2D" uid="uid://blqlgj21sp0p8" path="res://icon.svg" id="1_7nasp"]
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8ufp"]
 size = Vector2(130, 130)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f7lqv"]
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_vpmjk")
@@ -18,3 +20,6 @@ shape = SubResource("RectangleShape2D_m8ufp")
 
 [node name="Sprite2D" type="Sprite2D" parent="Player/GFX"]
 texture = ExtResource("1_7nasp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player/GFX"]
+sprite_frames = SubResource("SpriteFrames_f7lqv")
