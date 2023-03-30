@@ -21,7 +21,7 @@ public partial class Player : CharacterBody2D
 		
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
 
-		if(velocity != Vector2.Zero)
+		if(direction != Vector2.Zero)
 		{
 			animation.Play("Row");
 		}
