@@ -6,14 +6,30 @@ public partial class Player : CharacterBody2D
 	private float acceleration = 500f;
 	private float friction = 200f;
 
+	private AnimatedSprite2D animation;
 	private float rowForce = 200f;
 	private float maxRowSpeed = 100f;
 	private Vector2 velocity = Vector2.Zero;
+
+	public override void _Ready()
+	{
+		animation = GetNode<AnimatedSprite2D>("Player/GFX/PlayerAnimations");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
 		
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
+
+		if(velocity != Vector2.Zero)
+		{
+			animation.Play("Row");
+		}
+		else
+		{
+			animation.Stop();
+		}
+
 
 		velocity += direction * acceleration * (float)delta;
 
