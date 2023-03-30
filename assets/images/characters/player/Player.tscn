@@ -1,11 +1,18 @@
-[gd_scene load_steps=31 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=33 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
+[ext_resource type="Shader" path="res://assets/images/characters/player/BoatDropShader.gdshader" id="2_17nn7"]
 [ext_resource type="Texture2D" uid="uid://ctoyc4soy3go2" path="res://assets/images/characters/rowboat.png" id="2_yrxdc"]
 [ext_resource type="Texture2D" uid="uid://dkx8eed4owdv7" path="res://assets/images/characters/oars_sheet.png" id="3_jnc7u"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8ufp"]
 size = Vector2(130, 130)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ibu4"]
+shader = ExtResource("2_17nn7")
+shader_parameter/deform = Vector2(0, 0)
+shader_parameter/offset = Vector2(-1.631, -2.225)
+shader_parameter/modulate = Color(0.141176, 0.141176, 0.141176, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obnpk"]
 atlas = ExtResource("3_jnc7u")
@@ -193,6 +200,12 @@ animations = [{
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_vpmjk")
 
+[node name="Camera2D" type="Camera2D" parent="."]
+rotation = 1.5708
+position_smoothing_speed = 40.0
+drag_horizontal_enabled = true
+drag_vertical_enabled = true
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_m8ufp")
 
@@ -200,7 +213,12 @@ shape = SubResource("RectangleShape2D_m8ufp")
 
 [node name="GFX" type="Node2D" parent="Player"]
 
-[node name="Sprite2D" type="Sprite2D" parent="Player/GFX"]
+[node name="Boat" type="Sprite2D" parent="Player/GFX"]
+rotation = 1.5708
+texture = ExtResource("2_yrxdc")
+
+[node name="Boat2" type="Sprite2D" parent="Player/GFX"]
+material = SubResource("ShaderMaterial_8ibu4")
 rotation = 1.5708
 texture = ExtResource("2_yrxdc")
 
