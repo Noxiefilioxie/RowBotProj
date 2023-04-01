@@ -5,15 +5,20 @@
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_iytm8"]
 shader = ExtResource("1_5xtb8")
 shader_parameter/WATER_COL = Color(0.0392157, 0.380392, 0.878431, 1)
-shader_parameter/WATER2_COL = Color(0.0509804, 0.380392, 0.843137, 1)
+shader_parameter/WATER2_COL = Color(0.0784314, 0.431373, 0.941176, 1)
 shader_parameter/FOAM_COL = Color(0.0392157, 0.380392, 0.878431, 1)
 shader_parameter/distortion_speed = 2.0
-shader_parameter/tile = Vector2(5, 5)
+shader_parameter/tile = Vector2(100, 200)
 shader_parameter/wave_speed = 1.5
-shader_parameter/amount = 200
+shader_parameter/amount = 400
 
-[node name="ColorRect" type="ColorRect"]
+[node name="ParallaxBackground" type="ParallaxBackground"]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="."]
+motion_mirroring = Vector2(1920, 1080)
+
+[node name="ColorRect" type="ColorRect" parent="ParallaxLayer"]
 material = SubResource("ShaderMaterial_iytm8")
-offset_right = 48.0
-offset_bottom = 46.0
+offset_right = 1920.0
+offset_bottom = 1080.0
 color = Color(0.32549, 0.309804, 0.890196, 1)

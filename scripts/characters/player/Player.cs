@@ -3,13 +3,13 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	private float acceleration = 100f;
-	private float friction = 50f;
+	private float acceleration = 50;
+	private float friction = 25f;
 
 	private AnimatedSprite2D animation;
 	private AnimatedSprite2D oreAnimation;
 
-	private float rowForce = 1f;
+	private float rowForce = 5f;
 	private float maxRowSpeed = 5;
 	private Vector2 velocity = Vector2.Zero;
 
