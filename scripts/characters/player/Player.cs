@@ -3,17 +3,21 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
-	private float acceleration = 500f;
-	private float friction = 200f;
+	private float acceleration = 100f;
+	private float friction = 50f;
 
 	private AnimatedSprite2D animation;
-	private float rowForce = 200f;
-	private float maxRowSpeed = 100f;
+	private AnimatedSprite2D oreAnimation;
+
+	private float rowForce = 1f;
+	private float maxRowSpeed = 5;
 	private Vector2 velocity = Vector2.Zero;
 
 	public override void _Ready()
 	{
-		animation = GetNode<AnimatedSprite2D>("Player/GFX/PlayerAnimations");
+		oreAnimation = GetNode<AnimatedSprite2D>("Player/GFX/OreAnimation");
+		animation = GetNode<AnimatedSprite2D>("Player/GFX/PlayerAnimation");
+
 	}
 
 	public override void _PhysicsProcess(double delta)
@@ -24,9 +28,11 @@ public partial class Player : CharacterBody2D
 		if(direction != Vector2.Zero)
 		{
 			animation.Play("Row");
+			oreAnimation.Play("Row");
 		}
 		else
 		{
+			oreAnimation.Stop();
 			animation.Stop();
 		}
 
