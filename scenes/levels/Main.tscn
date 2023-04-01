@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scenes/levels/Main.cs" id="1_d5ap6"]
 [ext_resource type="PackedScene" uid="uid://dew43wrchwvhu" path="res://assets/images/characters/player/Player.tscn" id="1_u2t5b"]
-[ext_resource type="PackedScene" uid="uid://tyuvshbuunh5" path="res://tile_map.tscn" id="2_5ks58"]
+[ext_resource type="PackedScene" path="res://tile_map.tscn" id="2_5ks58"]
 [ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="2_bkgmu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8vccm"]

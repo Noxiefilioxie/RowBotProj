@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="RowBot"
-run/main_scene="res://scenes/levels/Main.tscn"
+run/main_scene="res://scenes/Startmenu.tscn"
 config/features=PackedStringArray("4.0", "C#", "Mobile")
 boot_splash/bg_color=Color(0, 0, 0, 1)
 boot_splash/image="res://assets/images/uglyleopard.png"
