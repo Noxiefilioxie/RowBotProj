@@ -9,6 +9,7 @@ public partial class Player : CharacterBody2D
 
 	private AnimatedSprite2D animation;
 	private AnimatedSprite2D oreAnimation;
+	private AudioStreamPlayer2D rowSFX;
 
 	private float rowForce = 5f;
 	private float maxRowSpeed = 5;
@@ -19,25 +20,39 @@ public partial class Player : CharacterBody2D
 		oreAnimation = GetNode<AnimatedSprite2D>("Player/GFX/OreAnimation");
 		animation = GetNode<AnimatedSprite2D>("Player/GFX/PlayerAnimation");
 		ripples = GetNode<Node2D>("Player/GFX/Ripples");
+		rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
+
+	}
+
+
+	public override void _Process(double delda)
+	{
 
 	}
 
 	public override void _PhysicsProcess(double delta)
 	{
-		
+				
 		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
 
 		if(direction != Vector2.Zero)
 		{
 			animation.Play("Row");
 			oreAnimation.Play("Row");
+			if(rowSFX.Playing != true)
+			{
+			rowSFX.Play();
+			}
 		}
 		else
 		{
-			oreAnimation.Stop();
+			if(rowSFX.Playing == true)
+			{
+			rowSFX.Stop();
+			}
 			animation.Stop();
+			oreAnimation.Stop();
 		}
-
 
 		velocity += direction * acceleration * (float)delta;
 
@@ -47,7 +62,6 @@ public partial class Player : CharacterBody2D
 		{
 			velocity -= velocity.Normalized() * frictionForce;
 			ripples.Visible = false;
-
 		}
 		else	
 		{
