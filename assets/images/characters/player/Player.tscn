@@ -9,7 +9,7 @@
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatRipple.gdshader" id="7_erlax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8ufp"]
-size = Vector2(130, 130)
+size = Vector2(60, 86)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ibu4"]
 render_priority = 0
@@ -401,6 +401,7 @@ orbit_velocity_max = 0.0
 scale_max = 4.0
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
+z_index = 2
 script = ExtResource("1_vpmjk")
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -410,6 +411,7 @@ drag_horizontal_enabled = true
 drag_vertical_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-1, -1)
 shape = SubResource("RectangleShape2D_m8ufp")
 
 [node name="Player" type="Node2D" parent="."]

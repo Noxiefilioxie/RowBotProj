@@ -6,7 +6,7 @@ uniform vec4 WATER_COL : source_color =  vec4(0.04, 0.38, 0.88, 1.0);
 
 uniform vec4 WATER2_COL : source_color =  vec4(0.04, 0.35, 0.78, 1.0);
 
-uniform vec4 FOAM_COL : source_color = vec4(0.8125, 0.9609, 0.9648, 1.0);
+//uniform vec4 FOAM_COL : source_color = vec4(0.8125, 0.9609, 0.9648, 1.0);
 
 
 
@@ -256,7 +256,7 @@ vec3 water(vec2 uv, vec3 cdir, float iTime)
 
     vec3 ret = mix(WATER_COL.rgb, WATER2_COL.rgb, waterlayer(uv + dist.xy));
 
-    ret = mix(ret, FOAM_COL.rgb, waterlayer(vec2(1.0) - uv - dist.yx));
+//    ret = mix(ret, FOAM_COL.rgb, waterlayer(vec2(1.0) - uv - dist.yx));
 
     return ret;
 
