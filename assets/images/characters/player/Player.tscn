@@ -9,10 +9,8 @@
 size = Vector2(130, 130)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_8ibu4"]
+render_priority = 0
 shader = ExtResource("2_17nn7")
-shader_parameter/deform = Vector2(0, 0)
-shader_parameter/offset = Vector2(-1.631, -2.225)
-shader_parameter/modulate = Color(0.141176, 0.141176, 0.141176, 1)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obnpk"]
 atlas = ExtResource("3_jnc7u")

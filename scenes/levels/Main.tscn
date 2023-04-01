@@ -1,8 +1,18 @@
-[gd_scene load_steps=2 format=3 uid="uid://cy3mw852vhbq6"]
+[gd_scene load_steps=3 format=3 uid="uid://cy3mw852vhbq6"]
 
 [ext_resource type="PackedScene" uid="uid://dew43wrchwvhu" path="res://assets/images/characters/player/Player.tscn" id="1_u2t5b"]
+[ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="2_bkgmu"]
 
 [node name="Main" type="Node2D"]
 
+[node name="ColorRect" parent="." instance=ExtResource("2_bkgmu")]
+z_index = -1
+offset_left = -162.0
+offset_top = -40.0
+offset_right = 1599.0
+offset_bottom = 1289.0
+
 [node name="Player" parent="." instance=ExtResource("1_u2t5b")]
 position = Vector2(415, 287)
+
+[editable path="Player"]
