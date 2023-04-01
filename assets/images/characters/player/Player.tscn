@@ -1,21 +1,37 @@
-[gd_scene load_steps=65 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=88 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
-[ext_resource type="Shader" path="res://assets/images/characters/player/BoatDropShader.gdshader" id="2_17nn7"]
 [ext_resource type="Texture2D" uid="uid://cww8jfasysi0a" path="res://assets/images/characters/rowboat_robot_feet.png" id="2_d5nci"]
 [ext_resource type="Texture2D" uid="uid://ctoyc4soy3go2" path="res://assets/images/characters/rowboat.png" id="2_yrxdc"]
 [ext_resource type="Texture2D" uid="uid://dkx8eed4owdv7" path="res://assets/images/characters/oars_sheet.png" id="3_jnc7u"]
 [ext_resource type="Texture2D" uid="uid://cvnluershi2l6" path="res://assets/images/characters/robot_rowing_sheet.png" id="5_lom0v"]
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatRipple.gdshader" id="7_erlax"]
+[ext_resource type="Texture2D" uid="uid://chddg0qur2cm0" path="res://assets/images/characters/row-bot-up.png" id="8_6mf6v"]
 [ext_resource type="AudioStream" uid="uid://bwjaw746dmsol" path="res://assets/sounds/sfx/splash_12.ogg" id="8_hanif"]
+[ext_resource type="Texture2D" uid="uid://dsl7s5s3ftews" path="res://assets/images/characters/row-bot-down.png" id="8_lpytu"]
+[ext_resource type="Texture2D" uid="uid://bo1ht7ft65nwn" path="res://assets/images/characters/row-bot-left.png" id="9_vfqdd"]
+[ext_resource type="Texture2D" uid="uid://b4w87wgbqbq6v" path="res://assets/images/characters/row-bot-right.png" id="10_lvytb"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yirao"]
 radius = 31.0
 height = 96.0
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_8ibu4"]
-render_priority = 0
-shader = ExtResource("2_17nn7")
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u85bc"]
+shader = ExtResource("7_erlax")
+shader_parameter/amplitude = 0.1
+shader_parameter/frequency = 12.69
+shader_parameter/rippleRate = 0.5
+shader_parameter/waveAmplitude = 0.1
+shader_parameter/waveFrequency = 4.0
+shader_parameter/blendingAmount = 0.6
+shader_parameter/amount = 40
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvhb5"]
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 4.0
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_obnpk"]
 atlas = ExtResource("3_jnc7u")
@@ -383,22 +399,152 @@ animations = [{
 "speed": 25.0
 }]
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_u85bc"]
-shader = ExtResource("7_erlax")
-shader_parameter/amplitude = 0.1
-shader_parameter/frequency = 12.69
-shader_parameter/rippleRate = 0.5
-shader_parameter/waveAmplitude = 0.1
-shader_parameter/waveFrequency = 4.0
-shader_parameter/blendingAmount = 0.6
-shader_parameter/amount = 40
+[sub_resource type="AtlasTexture" id="AtlasTexture_kf81i"]
+atlas = ExtResource("8_lpytu")
+region = Rect2(0, 0, 48, 48)
 
-[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvhb5"]
-particle_flag_disable_z = true
-gravity = Vector3(0, 0, 0)
-orbit_velocity_min = 0.0
-orbit_velocity_max = 0.0
-scale_max = 4.0
+[sub_resource type="AtlasTexture" id="AtlasTexture_7hk8j"]
+atlas = ExtResource("8_lpytu")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_iv8hi"]
+atlas = ExtResource("8_lpytu")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbl7s"]
+atlas = ExtResource("8_lpytu")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_k05fl"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kf81i")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_7hk8j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_iv8hi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbl7s")
+}],
+"loop": true,
+"name": &"MoveDown",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3wm43"]
+atlas = ExtResource("8_6mf6v")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cnd01"]
+atlas = ExtResource("8_6mf6v")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6ub2v"]
+atlas = ExtResource("8_6mf6v")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lm2sc"]
+atlas = ExtResource("8_6mf6v")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_p0un3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3wm43")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cnd01")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6ub2v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lm2sc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_82u1n"]
+atlas = ExtResource("9_vfqdd")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_of800"]
+atlas = ExtResource("9_vfqdd")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cf244"]
+atlas = ExtResource("9_vfqdd")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_v4x0d"]
+atlas = ExtResource("9_vfqdd")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_e80m3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_82u1n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_of800")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cf244")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_v4x0d")
+}],
+"loop": true,
+"name": &"default",
+"speed": 8.0
+}]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1n4il"]
+atlas = ExtResource("10_lvytb")
+region = Rect2(0, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xec0u"]
+atlas = ExtResource("10_lvytb")
+region = Rect2(48, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kr1kl"]
+atlas = ExtResource("10_lvytb")
+region = Rect2(96, 0, 48, 48)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vo7jj"]
+atlas = ExtResource("10_lvytb")
+region = Rect2(144, 0, 48, 48)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_csdck"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1n4il")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xec0u")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kr1kl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vo7jj")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tggea"]
+size = Vector2(62, 30)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -426,27 +572,6 @@ texture = ExtResource("2_d5nci")
 [node name="Boat" type="Sprite2D" parent="Player/GFX"]
 rotation = 1.5708
 texture = ExtResource("2_yrxdc")
-
-[node name="Boat2" type="Sprite2D" parent="Player/GFX"]
-material = SubResource("ShaderMaterial_8ibu4")
-rotation = 1.5708
-texture = ExtResource("2_yrxdc")
-
-[node name="OreAnimation" type="AnimatedSprite2D" parent="Player/GFX"]
-z_index = 1
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_f7lqv")
-animation = &"Row"
-frame = 9
-frame_progress = 0.71437
-
-[node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player/GFX"]
-z_index = 1
-rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_eta0v")
-animation = &"Row"
-frame = 11
-frame_progress = 0.835961
 
 [node name="Ripples" type="Node2D" parent="Player/GFX"]
 
@@ -494,9 +619,54 @@ position = Vector2(-12, -10)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_nvhb5")
 
+[node name="Animations" type="Node2D" parent="Player/GFX"]
+
+[node name="OreAnimation" type="AnimatedSprite2D" parent="Player/GFX/Animations"]
+z_index = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_f7lqv")
+animation = &"Row"
+frame = 9
+frame_progress = 0.71437
+
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player/GFX/Animations"]
+z_index = 1
+rotation = 1.5708
+sprite_frames = SubResource("SpriteFrames_eta0v")
+animation = &"Row"
+
+[node name="LandAnimations" type="Node2D" parent="Player/GFX/Animations"]
+visible = false
+
+[node name="MoveDown" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+sprite_frames = SubResource("SpriteFrames_k05fl")
+animation = &"MoveDown"
+
+[node name="MoveUp" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+sprite_frames = SubResource("SpriteFrames_p0un3")
+frame = 3
+frame_progress = 0.990448
+
+[node name="MoveLeft" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+sprite_frames = SubResource("SpriteFrames_e80m3")
+
+[node name="MoveRight" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+sprite_frames = SubResource("SpriteFrames_csdck")
+frame = 1
+frame_progress = 0.947234
+
 [node name="SFX" type="Node2D" parent="Player"]
 
 [node name="Row" type="AudioStreamPlayer2D" parent="Player/SFX"]
 stream = ExtResource("8_hanif")
 volume_db = -20.0
 pitch_scale = 0.75
+
+[node name="LandCheck" type="Area2D" parent="."]
+
+[node name="LandCheck" type="CollisionShape2D" parent="LandCheck"]
+position = Vector2(-1, 0)
+shape = SubResource("RectangleShape2D_tggea")
+
+[connection signal="area_entered" from="LandCheck" to="." method="_on_land_check_area_entered"]
+[connection signal="area_exited" from="LandCheck" to="." method="_on_land_check_area_exited"]
