@@ -1,4 +1,4 @@
-[gd_scene load_steps=64 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=65 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatDropShader.gdshader" id="2_17nn7"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://dkx8eed4owdv7" path="res://assets/images/characters/oars_sheet.png" id="3_jnc7u"]
 [ext_resource type="Texture2D" uid="uid://cvnluershi2l6" path="res://assets/images/characters/robot_rowing_sheet.png" id="5_lom0v"]
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatRipple.gdshader" id="7_erlax"]
+[ext_resource type="AudioStream" uid="uid://bwjaw746dmsol" path="res://assets/sounds/sfx/splash_12.ogg" id="8_hanif"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yirao"]
 radius = 31.0
@@ -492,3 +493,10 @@ z_index = -1
 position = Vector2(-12, -10)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_nvhb5")
+
+[node name="SFX" type="Node2D" parent="Player"]
+
+[node name="Row" type="AudioStreamPlayer2D" parent="Player/SFX"]
+stream = ExtResource("8_hanif")
+volume_db = -20.0
+pitch_scale = 0.75
