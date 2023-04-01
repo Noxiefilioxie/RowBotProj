@@ -544,7 +544,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tggea"]
-size = Vector2(62, 30)
+size = Vector2(31, 31)
 
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
@@ -562,20 +562,20 @@ shape = SubResource("CapsuleShape2D_yirao")
 
 [node name="Player" type="Node2D" parent="."]
 
-[node name="GFX" type="Node2D" parent="Player"]
+[node name="BoatGFX" type="Node2D" parent="Player"]
 
-[node name="RowboatRobotFeet" type="Sprite2D" parent="Player/GFX"]
+[node name="RowboatRobotFeet" type="Sprite2D" parent="Player/BoatGFX"]
 z_index = 1
 rotation = 1.5708
 texture = ExtResource("2_d5nci")
 
-[node name="Boat" type="Sprite2D" parent="Player/GFX"]
+[node name="Boat" type="Sprite2D" parent="Player/BoatGFX"]
 rotation = 1.5708
 texture = ExtResource("2_yrxdc")
 
-[node name="Ripples" type="Node2D" parent="Player/GFX"]
+[node name="Ripples" type="Node2D" parent="Player/BoatGFX"]
 
-[node name="ColorRect" type="ColorRect" parent="Player/GFX/Ripples"]
+[node name="ColorRect" type="ColorRect" parent="Player/BoatGFX/Ripples"]
 z_index = -1
 material = SubResource("ShaderMaterial_u85bc")
 offset_top = -1.0
@@ -583,7 +583,7 @@ offset_right = 17.0
 offset_bottom = 22.0
 scale = Vector2(3.45738, 2.62166)
 
-[node name="ColorRect2" type="ColorRect" parent="Player/GFX/Ripples"]
+[node name="ColorRect2" type="ColorRect" parent="Player/BoatGFX/Ripples"]
 z_index = -1
 material = SubResource("ShaderMaterial_u85bc")
 offset_right = 17.0
@@ -591,7 +591,7 @@ offset_bottom = 22.0
 rotation = -1.5708
 scale = Vector2(3.45738, 2.62166)
 
-[node name="ColorRect3" type="ColorRect" parent="Player/GFX/Ripples"]
+[node name="ColorRect3" type="ColorRect" parent="Player/BoatGFX/Ripples"]
 z_index = -1
 material = SubResource("ShaderMaterial_u85bc")
 offset_right = 17.0
@@ -599,7 +599,7 @@ offset_bottom = 22.0
 rotation = -3.14159
 scale = Vector2(3.45738, 2.62166)
 
-[node name="ColorRect4" type="ColorRect" parent="Player/GFX/Ripples"]
+[node name="ColorRect4" type="ColorRect" parent="Player/BoatGFX/Ripples"]
 z_index = -1
 material = SubResource("ShaderMaterial_u85bc")
 offset_right = 17.0
@@ -607,21 +607,21 @@ offset_bottom = 22.0
 rotation = -4.71239
 scale = Vector2(3.45738, 2.62166)
 
-[node name="GPUParticles2D" type="GPUParticles2D" parent="Player/GFX"]
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Player/BoatGFX"]
 z_index = -1
 position = Vector2(-12, 9)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_nvhb5")
 
-[node name="GPUParticles2D2" type="GPUParticles2D" parent="Player/GFX"]
+[node name="GPUParticles2D2" type="GPUParticles2D" parent="Player/BoatGFX"]
 z_index = -1
 position = Vector2(-12, -10)
 amount = 10
 process_material = SubResource("ParticleProcessMaterial_nvhb5")
 
-[node name="Animations" type="Node2D" parent="Player/GFX"]
+[node name="Animations" type="Node2D" parent="Player/BoatGFX"]
 
-[node name="OreAnimation" type="AnimatedSprite2D" parent="Player/GFX/Animations"]
+[node name="OreAnimation" type="AnimatedSprite2D" parent="Player/BoatGFX/Animations"]
 z_index = 1
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_f7lqv")
@@ -629,28 +629,33 @@ animation = &"Row"
 frame = 9
 frame_progress = 0.71437
 
-[node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player/GFX/Animations"]
+[node name="PlayerAnimation" type="AnimatedSprite2D" parent="Player/BoatGFX/Animations"]
 z_index = 1
 rotation = 1.5708
 sprite_frames = SubResource("SpriteFrames_eta0v")
 animation = &"Row"
 
-[node name="LandAnimations" type="Node2D" parent="Player/GFX/Animations"]
+[node name="LandGFX" type="Node2D" parent="Player"]
 visible = false
 
-[node name="MoveDown" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+[node name="Animations" type="Node2D" parent="Player/LandGFX"]
+
+[node name="MoveDown" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
 sprite_frames = SubResource("SpriteFrames_k05fl")
 animation = &"MoveDown"
 
-[node name="MoveUp" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+[node name="MoveUp" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_p0un3")
 frame = 3
 frame_progress = 0.990448
 
-[node name="MoveLeft" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+[node name="MoveLeft" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_e80m3")
 
-[node name="MoveRight" type="AnimatedSprite2D" parent="Player/GFX/Animations/LandAnimations"]
+[node name="MoveRight" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_csdck")
 frame = 1
 frame_progress = 0.947234
@@ -665,7 +670,7 @@ pitch_scale = 0.75
 [node name="LandCheck" type="Area2D" parent="."]
 
 [node name="LandCheck" type="CollisionShape2D" parent="LandCheck"]
-position = Vector2(-1, 0)
+position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_tggea")
 
 [connection signal="area_entered" from="LandCheck" to="." method="_on_land_check_area_entered"]

@@ -3,12 +3,18 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+	private bool previousIsOnLand = false;
 	private bool IsOnLand = false;
 	private bool IsRowing = false;
 	private float acceleration = 50;
 	private float friction = 25f;
+
+	private float Speed = 50f;
+
 	private Node2D ripples;
-	private Node2D landAnimations;
+	private Node2D landGFX;
+	private Node2D boatGFX;
+
 
 	private AnimatedSprite2D animation;
 	private AnimatedSprite2D moveUpAnimation;
@@ -32,10 +38,12 @@ public partial class Player : CharacterBody2D
 
 		InitMovementAnimations();
 
-        oreAnimation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/OreAnimation");
-        animation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/PlayerAnimation");   
-		landAnimations =    GetNode<Node2D>("Player/GFX/Animations/LandAnimations");   
-        ripples = GetNode<Node2D>("Player/GFX/Ripples");
+        oreAnimation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/OreAnimation");
+        animation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/PlayerAnimation");   
+		landGFX = GetNode<Node2D>("Player/LandGFX");
+		boatGFX = GetNode<Node2D>("Player/BoatGFX"); 
+
+        ripples = GetNode<Node2D>("Player/BoatGFX/Ripples");
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 
     }
@@ -47,92 +55,139 @@ public partial class Player : CharacterBody2D
 
 
     public override void _PhysicsProcess(double delta)
-	{
-				
-		Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
+    {
 
-		if(IsOnLand)
+        Vector2 direction = Input.GetVector("ui_left", "ui_right", "ui_up", "ui_down").Normalized();
+
+        if (IsOnLand)
+        {
+            rowSFX.Stop();
+			boatGFX.Visible = false;;
+
+            oreAnimation.Visible = false;
+            animation.Visible = false;
+            landGFX.Visible = true;
+            MoveAnimations(direction);
+        }
+        else
+        {
+			boatGFX.Visible = true;
+            oreAnimation.Visible = true;
+            animation.Visible = true;
+            landGFX.Visible = false;
+        }
+
+        if (IsRowing)
+        {
+            animation.Play("Row");
+            oreAnimation.Play("Row");
+            if (rowSFX.Playing != true)
+            {
+                rowSFX.Play();
+            }
+        }
+        else
+        {
+            if (rowSFX.Playing == true)
+            {
+                rowSFX.Stop();
+            }
+
+            animation.Stop();
+            oreAnimation.Stop();
+        }
+
+
+        if (direction != Vector2.Zero)
+        {
+            if (!IsOnLand)
+            {
+                IsRowing = true;
+            }
+
+        }
+        else
+        {
+
+            if (!IsOnLand)
+            {
+                IsRowing = false;
+            }
+
+        }
+
+
+        if (!IsOnLand)
+        {
+  	        BoatMovement(delta, direction);
+			previousIsOnLand = false;
+        }
+        else
+        {
+			if (!previousIsOnLand)
+            {
+                velocity = Vector2.Zero; // Reset the boat's velocity
+                previousIsOnLand = true;
+            }
+            LandMovement(delta, direction);
+			LandMovement(delta, direction);
+        }
+    }
+
+    private void LandMovement(double delta, Vector2 direction)
+    {
+		Rotation = 0f;
+        Vector2 velocity = Velocity;
+
+
+		// Get the input direction and handle the movement/deceleration.
+		// As good practice, you should replace UI actions with custom gameplay actions.
+		if (direction != Vector2.Zero)
 		{
-			rowSFX.Stop();
-			oreAnimation.Visible = false;
-			animation.Visible = false;
-			landAnimations.Visible = true;
-			MoveAnimations(direction);
+			velocity.X = direction.X * Speed;
+			velocity.Y = direction.Y * Speed;
 		}
 		else
 		{
-			oreAnimation.Visible = true;
-			animation.Visible = true;
-			landAnimations.Visible = false;
+			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
+			velocity.Y = Mathf.MoveToward(Velocity.X, 0, Speed);
 		}
 
-		if(IsRowing)
-		{
-			animation.Play("Row");
-			oreAnimation.Play("Row");
-			if(rowSFX.Playing != true)
-			{
-				rowSFX.Play();
-			}
-		}
-		else
-		{
-			if(rowSFX.Playing == true)
-			{
-				rowSFX.Stop();
-			}
+		Velocity = velocity;
+		MoveAndSlide();
+    }
 
-			animation.Stop();
-			oreAnimation.Stop();
-		}
-
-
-		if(direction != Vector2.Zero)
-		{
-			if(!IsOnLand)
-			{
-				IsRowing = true;
-			}
-
-		}
-		else
-		{
-
-			if(!IsOnLand)
-			{
-				IsRowing = false;
-			}
-
-		}
-
-		velocity += direction * acceleration * (float)delta;
-
-		float frictionForce = friction * (float)delta;
-
-		if(velocity.Length() > frictionForce)
-		{
-			velocity -= velocity.Normalized() * frictionForce;
-			ripples.Visible = false;
-		}
-		else	
-		{
-			ripples.Visible = true;
-
-			velocity = Vector2.Zero;
-		}
-
-		KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
-
-		if(collision != null)
-		{
-			 velocity = velocity.Slide(collision.GetNormal());
-		}
-
-		LookAtDirection(velocity);
-	}
+    private void BoatMovement(double delta, Vector2 direction)
+    {
+        velocity += direction * acceleration * (float)delta;
 	
 
-	  private void LookAtDirection(Vector2 direction)
+        float frictionForce = friction * (float)delta;
+
+        if (velocity.Length() > frictionForce)
+        {
+            velocity -= velocity.Normalized() * frictionForce;
+            ripples.Visible = false;
+        }
+        else
+        {
+            ripples.Visible = true;
+
+            velocity = Vector2.Zero;
+        }
+
+        KinematicCollision2D collision = MoveAndCollide(velocity * (float)delta);
+
+        if (collision != null)
+        {
+            velocity = velocity.Slide(collision.GetNormal());
+        }
+
+        LookAtDirection(velocity);
+
+    }
+
+    private void LookAtDirection(Vector2 direction)
     {
         if (direction.Length() > 0)
         {
@@ -147,10 +202,10 @@ public partial class Player : CharacterBody2D
 
 	private void InitMovementAnimations()
     {
-        moveUpAnimation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/LandAnimations/MoveUp");
-        moveDownAnimation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/LandAnimations/MoveDown");
-        moveLeftAnimation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/LandAnimations/MoveLeft");
-        moveRightAnimation = GetNode<AnimatedSprite2D>("Player/GFX/Animations/LandAnimations/MoveRight");
+        moveUpAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveUp");
+        moveDownAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveDown");
+        moveLeftAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveLeft");
+        moveRightAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveRight");
     }
 
 	private void ResetMoveAnimations(AnimatedSprite2D exclude)
@@ -199,7 +254,9 @@ public partial class Player : CharacterBody2D
 		if(area.IsInGroup("LAND"))
 		{
 			GD.Print("ON LAND");
+
 			IsOnLand = true;
+			IsRowing = false;
 		}
 	}
 
@@ -210,6 +267,7 @@ public partial class Player : CharacterBody2D
 		{
 			GD.Print("OFF LAND");
 			IsOnLand = false;
+			IsRowing = true;
 		}
 	}
 }
