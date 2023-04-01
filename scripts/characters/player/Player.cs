@@ -5,6 +5,7 @@ public partial class Player : CharacterBody2D
 {
 	private float acceleration = 50;
 	private float friction = 25f;
+	private Node2D ripples;
 
 	private AnimatedSprite2D animation;
 	private AnimatedSprite2D oreAnimation;
@@ -17,6 +18,7 @@ public partial class Player : CharacterBody2D
 	{
 		oreAnimation = GetNode<AnimatedSprite2D>("Player/GFX/OreAnimation");
 		animation = GetNode<AnimatedSprite2D>("Player/GFX/PlayerAnimation");
+		ripples = GetNode<Node2D>("Player/GFX/Ripples");
 
 	}
 
@@ -44,9 +46,13 @@ public partial class Player : CharacterBody2D
 		if(velocity.Length() > frictionForce)
 		{
 			velocity -= velocity.Normalized() * frictionForce;
+			ripples.Visible = false;
+
 		}
-		else
+		else	
 		{
+			ripples.Visible = true;
+
 			velocity = Vector2.Zero;
 		}
 

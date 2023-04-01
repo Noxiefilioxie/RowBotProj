@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=64 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatDropShader.gdshader" id="2_17nn7"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://ctoyc4soy3go2" path="res://assets/images/characters/rowboat.png" id="2_yrxdc"]
 [ext_resource type="Texture2D" uid="uid://dkx8eed4owdv7" path="res://assets/images/characters/oars_sheet.png" id="3_jnc7u"]
 [ext_resource type="Texture2D" uid="uid://cvnluershi2l6" path="res://assets/images/characters/robot_rowing_sheet.png" id="5_lom0v"]
+[ext_resource type="Shader" path="res://assets/images/characters/player/BoatRipple.gdshader" id="7_erlax"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_m8ufp"]
 size = Vector2(130, 130)
@@ -380,6 +381,25 @@ animations = [{
 "speed": 25.0
 }]
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_u85bc"]
+shader = ExtResource("7_erlax")
+shader_parameter/amplitude = 0.1
+shader_parameter/frequency = 12.69
+shader_parameter/rippleRate = 0.5
+shader_parameter/waveAmplitude = 0.1
+shader_parameter/waveFrequency = 4.0
+shader_parameter/blendingAmount = 0.6
+shader_parameter/amount = 40
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_nvhb5"]
+emission_shape = 2
+emission_sphere_radius = 11.28
+particle_flag_disable_z = true
+gravity = Vector3(0, 0, 0)
+orbit_velocity_min = 0.0
+orbit_velocity_max = 0.0
+scale_max = 4.0
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 script = ExtResource("1_vpmjk")
 
@@ -425,3 +445,42 @@ sprite_frames = SubResource("SpriteFrames_eta0v")
 animation = &"Row"
 frame = 11
 frame_progress = 0.835961
+
+[node name="Ripples" type="Node2D" parent="Player/GFX"]
+
+[node name="ColorRect" type="ColorRect" parent="Player/GFX/Ripples"]
+z_index = -1
+material = SubResource("ShaderMaterial_u85bc")
+offset_top = -1.0
+offset_right = 17.0
+offset_bottom = 22.0
+scale = Vector2(3.45738, 2.62166)
+
+[node name="ColorRect2" type="ColorRect" parent="Player/GFX/Ripples"]
+z_index = -1
+material = SubResource("ShaderMaterial_u85bc")
+offset_right = 17.0
+offset_bottom = 22.0
+rotation = -1.5708
+scale = Vector2(3.45738, 2.62166)
+
+[node name="ColorRect3" type="ColorRect" parent="Player/GFX/Ripples"]
+z_index = -1
+material = SubResource("ShaderMaterial_u85bc")
+offset_right = 17.0
+offset_bottom = 22.0
+rotation = -3.14159
+scale = Vector2(3.45738, 2.62166)
+
+[node name="ColorRect4" type="ColorRect" parent="Player/GFX/Ripples"]
+z_index = -1
+material = SubResource("ShaderMaterial_u85bc")
+offset_right = 17.0
+offset_bottom = 22.0
+rotation = -4.71239
+scale = Vector2(3.45738, 2.62166)
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Player/GFX"]
+z_index = -1
+amount = 10
+process_material = SubResource("ParticleProcessMaterial_nvhb5")
