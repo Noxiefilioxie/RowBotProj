@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0m52kg2sl835"]
 
-[ext_resource type="Texture2D" uid="uid://dn6jj1j1sayrn" path="res://assets/images/inventory/InventoryContainer.png" id="1_ma6w3"]
+[ext_resource type="Texture2D" uid="uid://dtkkfo00knmaw" path="res://assets/images/inventory/rowbot-inventory.png" id="1_gop6c"]
 [ext_resource type="PackedScene" uid="uid://clynithxy31in" path="res://scenes/Items/Battery.tscn" id="2_mm7p6"]
 [ext_resource type="PackedScene" uid="uid://dwfhm4b5q546o" path="res://scenes/Items/Monitor.tscn" id="3_v40kf"]
 [ext_resource type="PackedScene" uid="uid://v44o8lsh7xwp" path="res://scenes/Items/Pipe.tscn" id="4_owmx3"]
@@ -12,22 +12,27 @@
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_left = 4.0
 offset_top = 4.0
-offset_right = 184.0
-offset_bottom = 51.0
-texture = ExtResource("1_ma6w3")
+offset_right = 293.0
+offset_bottom = 98.0
+texture = ExtResource("1_gop6c")
 expand_mode = 1
 
 [node name="Battery" parent="." instance=ExtResource("2_mm7p6")]
-position = Vector2(24, 27)
+z_index = -1
+position = Vector2(40, 51)
 
 [node name="Monitor" parent="." instance=ExtResource("3_v40kf")]
-position = Vector2(57, 28)
+z_index = -1
+position = Vector2(203, 51)
 
 [node name="Pipe" parent="." instance=ExtResource("4_owmx3")]
-position = Vector2(94, 28)
+z_index = -1
+position = Vector2(148, 51)
 
 [node name="Pump" parent="." instance=ExtResource("5_lanws")]
-position = Vector2(164, 28)
+z_index = -1
+position = Vector2(93, 52)
 
 [node name="Shower" parent="." instance=ExtResource("6_ji8dx")]
-position = Vector2(129, 28)
+z_index = -1
+position = Vector2(255, 51)
