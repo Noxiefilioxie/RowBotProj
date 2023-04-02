@@ -151,7 +151,6 @@ public partial class Player : CharacterBody2D
                 previousIsOnLand = true;
             }
             LandMovement(delta, direction);
-			LandMovement(delta, direction);
         }
     }
 

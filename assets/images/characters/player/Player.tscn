@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://cvnluershi2l6" path="res://assets/images/characters/robot_rowing_sheet.png" id="5_lom0v"]
 [ext_resource type="Shader" path="res://assets/images/characters/player/BoatRipple.gdshader" id="7_erlax"]
 [ext_resource type="Texture2D" uid="uid://chddg0qur2cm0" path="res://assets/images/characters/row-bot-up.png" id="8_6mf6v"]
-[ext_resource type="AudioStream" uid="uid://bwjaw746dmsol" path="res://assets/sounds/sfx/splash_12.ogg" id="8_hanif"]
+[ext_resource type="AudioStream" uid="uid://dtvxc4s4pw4h1" path="res://assets/sounds/sfx/splash_12.ogg" id="8_hanif"]
 [ext_resource type="Texture2D" uid="uid://dsl7s5s3ftews" path="res://assets/images/characters/row-bot-down.png" id="8_lpytu"]
 [ext_resource type="Texture2D" uid="uid://bo1ht7ft65nwn" path="res://assets/images/characters/row-bot-left.png" id="9_vfqdd"]
 [ext_resource type="Texture2D" uid="uid://b4w87wgbqbq6v" path="res://assets/images/characters/row-bot-right.png" id="10_lvytb"]
