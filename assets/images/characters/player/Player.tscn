@@ -1,4 +1,4 @@
-[gd_scene load_steps=88 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=89 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 [ext_resource type="Texture2D" uid="uid://cww8jfasysi0a" path="res://assets/images/characters/rowboat_robot_feet.png" id="2_d5nci"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://dsl7s5s3ftews" path="res://assets/images/characters/row-bot-down.png" id="8_lpytu"]
 [ext_resource type="Texture2D" uid="uid://bo1ht7ft65nwn" path="res://assets/images/characters/row-bot-left.png" id="9_vfqdd"]
 [ext_resource type="Texture2D" uid="uid://b4w87wgbqbq6v" path="res://assets/images/characters/row-bot-right.png" id="10_lvytb"]
+[ext_resource type="AudioStream" uid="uid://bxefeemeianop" path="res://assets/sounds/sfx/electic_razor.ogg" id="12_x4bgg"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yirao"]
 radius = 31.0
@@ -561,8 +562,10 @@ position = Vector2(-1, -1)
 shape = SubResource("CapsuleShape2D_yirao")
 
 [node name="Player" type="Node2D" parent="."]
+z_index = 1
 
 [node name="BoatGFX" type="Node2D" parent="Player"]
+visible = false
 
 [node name="RowboatRobotFeet" type="Sprite2D" parent="Player/BoatGFX"]
 z_index = 1
@@ -636,13 +639,35 @@ sprite_frames = SubResource("SpriteFrames_eta0v")
 animation = &"Row"
 
 [node name="LandGFX" type="Node2D" parent="Player"]
-visible = false
 
 [node name="Animations" type="Node2D" parent="Player/LandGFX"]
 
 [node name="MoveDown" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_k05fl")
 animation = &"MoveDown"
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveDown"]
+z_index = -1
+position = Vector2(-8, 0)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D2" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveDown"]
+z_index = -1
+position = Vector2(8, 0)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="MoveUp" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
 visible = false
@@ -650,9 +675,52 @@ sprite_frames = SubResource("SpriteFrames_p0un3")
 frame = 3
 frame_progress = 0.990448
 
+[node name="CPUParticles2D3" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveUp"]
+z_index = -1
+position = Vector2(-5, 13)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D4" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveUp"]
+z_index = -1
+position = Vector2(6, 13)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
 [node name="MoveLeft" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
-visible = false
 sprite_frames = SubResource("SpriteFrames_e80m3")
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveLeft"]
+z_index = -1
+position = Vector2(8, 14)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveLeft"]
+z_index = -1
+position = Vector2(8, 3)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="MoveRight" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
 visible = false
@@ -660,12 +728,39 @@ sprite_frames = SubResource("SpriteFrames_csdck")
 frame = 1
 frame_progress = 0.947234
 
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveRight"]
+z_index = -1
+position = Vector2(-7, 15)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveRight"]
+z_index = -1
+position = Vector2(-8, 3)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
 [node name="SFX" type="Node2D" parent="Player"]
 
 [node name="Row" type="AudioStreamPlayer2D" parent="Player/SFX"]
 stream = ExtResource("8_hanif")
 volume_db = -20.0
 pitch_scale = 0.75
+
+[node name="ThreadsMove" type="AudioStreamPlayer2D" parent="Player/SFX"]
+stream = ExtResource("12_x4bgg")
+volume_db = -10.0
+pitch_scale = 0.65
 
 [node name="LandCheck" type="Area2D" parent="."]
 

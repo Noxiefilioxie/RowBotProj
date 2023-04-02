@@ -20,11 +20,14 @@ public partial class Player : CharacterBody2D
 	private AnimatedSprite2D moveUpAnimation;
 	private AnimatedSprite2D moveDownAnimation;
 	private AnimatedSprite2D moveLeftAnimation;
-
 	private AnimatedSprite2D moveRightAnimation;
-
 	private AnimatedSprite2D oreAnimation;
+
+
+
 	private AudioStreamPlayer2D rowSFX;
+	private AudioStreamPlayer2D threadsSFX;
+
 
 	private float rowForce = 5f;
 	private float maxRowSpeed = 5;
@@ -45,6 +48,7 @@ public partial class Player : CharacterBody2D
 
         ripples = GetNode<Node2D>("Player/BoatGFX/Ripples");
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
+		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
 
     }
 
@@ -102,12 +106,29 @@ public partial class Player : CharacterBody2D
         {
             if (!IsOnLand)
             {
+				threadsSFX.Stop();
                 IsRowing = true;
             }
+
+			if(IsOnLand)
+			{
+				if(!threadsSFX.Playing)
+				{
+					threadsSFX.Play();
+				}
+			}
 
         }
         else
         {
+
+			if(IsOnLand)
+			{
+				if(threadsSFX.Playing)
+				{
+					threadsSFX.Stop();
+				}
+			}
 
             if (!IsOnLand)
             {
@@ -246,6 +267,14 @@ public partial class Player : CharacterBody2D
 	        moveRightAnimation.Play();
 	        ResetMoveAnimations(moveRightAnimation);
 	    }
+		else
+		{
+			moveUpAnimation.Pause();
+			moveDownAnimation.Pause();
+			moveRightAnimation.Pause();
+			moveLeftAnimation.Pause();
+
+		}
 	}
 
 
