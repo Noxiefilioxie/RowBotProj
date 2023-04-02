@@ -29,7 +29,7 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer2D threadsSFX;
 
 
-	private float rowForce = 5f;
+	private float rowForce = 10f;
 	private float maxRowSpeed = 5;
 	private Vector2 velocity = Vector2.Zero;
 

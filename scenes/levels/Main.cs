@@ -9,7 +9,6 @@ public partial class Main : Node2D
     [Export]
     public int MapSize = 100;
     public int ObjectSize = 60;
-
     private HashSet<Vector2> occupiedTiles = new HashSet<Vector2>();
 
     // Called when the node enters the scene tree for the first time.
@@ -30,9 +29,6 @@ public partial class Main : Node2D
     public override void _Process(double delta)
     {
     }
-
-
-
 
     private void PlaceObjects()
     {

@@ -1,8 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://cy3mw852vhbq6"]
+[gd_scene load_steps=7 format=3 uid="uid://c8cjp8km8kavt"]
 
 [ext_resource type="Script" path="res://scenes/levels/Main.cs" id="1_d5ap6"]
 [ext_resource type="PackedScene" uid="uid://dew43wrchwvhu" path="res://assets/images/characters/player/Player.tscn" id="1_u2t5b"]
-[ext_resource type="PackedScene" uid="uid://tyuvshbuunh5" path="res://tile_map.tscn" id="2_5ks58"]
+[ext_resource type="PackedScene" uid="uid://c6ffr807qld3x" path="res://scenes/Islands/MainIsland.tscn" id="2_7ilwi"]
 [ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="2_bkgmu"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8vccm"]
@@ -13,10 +13,7 @@ b = Vector2(0, 10000)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_d5ap6")
-Islands = Array[PackedScene]([ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58"), ExtResource("2_5ks58")])
-
-[node name="Player" parent="." instance=ExtResource("1_u2t5b")]
-position = Vector2(415, 287)
+Islands = Array[PackedScene]([ExtResource("1_u2t5b"), ExtResource("2_7ilwi")])
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_bkgmu")]
 
