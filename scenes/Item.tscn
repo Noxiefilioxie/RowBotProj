@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://l5sp7cwforby"]
+
+[ext_resource type="Texture2D" uid="uid://d0riemsue2f14" path="res://assets/images/inventory/Item1PlaceHolder.png" id="1_btqns"]
+[ext_resource type="Script" path="res://scripts/inventory/ItemController.cs" id="1_qfdge"]
+
+[node name="Item" type="Node2D" node_paths=PackedStringArray("Texture")]
+script = ExtResource("1_qfdge")
+Texture = NodePath("TextureRect")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
+texture = ExtResource("1_btqns")
