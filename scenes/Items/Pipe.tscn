@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://b84arn7o4r3mj"]
+[gd_scene load_steps=3 format=3 uid="uid://v44o8lsh7xwp"]
 
-[ext_resource type="Texture2D" uid="uid://novimbjh45aa" path="res://assets/images/inventory/rowbot-items.png" id="1_edplx"]
+[ext_resource type="Texture2D" uid="uid://8mcglufiycas" path="res://assets/images/inventory/rowbot-items.png" id="1_edplx"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nw0m0"]
 size = Vector2(31, 26)
@@ -10,7 +10,7 @@ texture = ExtResource("1_edplx")
 hframes = 5
 frame = 2
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["ITEM"]]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" groups=["ITEM"]]
 position = Vector2(0.5, 3)

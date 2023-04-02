@@ -1,14 +1,21 @@
-﻿using System;
+﻿using Godot;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace RowBot.scripts.inventory
 {
-    public class Inventory
+    public partial class Inventory : Control
     {
         private List<Item> items;
+
+        public override void _Ready()
+        {
+
+        }
 
         public Inventory()
         {
@@ -22,6 +29,10 @@ namespace RowBot.scripts.inventory
         public void RemoveItem(Item item)
         {
             items.Remove(item);
+        }
+
+        public static void ClearItem(string item)
+        {
         }
 
 

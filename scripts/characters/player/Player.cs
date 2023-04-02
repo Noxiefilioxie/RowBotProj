@@ -1,4 +1,5 @@
 using Godot;
+using RowBot.scripts.inventory;
 using System;
 
 public partial class Player : CharacterBody2D
@@ -49,6 +50,13 @@ public partial class Player : CharacterBody2D
         ripples = GetNode<Node2D>("Player/BoatGFX/Ripples");
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
+
+		GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Pump").Visible = false;
+        GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Battery").Visible = false;
+        GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Monitor").Visible = false;
+        GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Shower").Visible = false;
+        GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Pipe").Visible = false;
+
 
     }
 
@@ -285,6 +293,14 @@ public partial class Player : CharacterBody2D
 
 			IsOnLand = true;
 			IsRowing = false;
+		}
+
+		if (area.IsInGroup("ITEM"))
+		{
+
+            var item = GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/{area.GetParent().Name}");
+			item.Visible = true;
+            area.GetParent().QueueFree();
 		}
 	}
 
