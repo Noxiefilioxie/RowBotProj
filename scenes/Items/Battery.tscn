@@ -1,0 +1,16 @@
+[gd_scene load_steps=3 format=3 uid="uid://dc0dvc2j7tf5s"]
+
+[ext_resource type="Texture2D" uid="uid://novimbjh45aa" path="res://assets/images/inventory/rowbot-items.png" id="1_cshfi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ep58y"]
+size = Vector2(29, 30)
+
+[node name="Battery" type="Sprite2D"]
+texture = ExtResource("1_cshfi")
+hframes = 5
+
+[node name="Area2D" type="Area2D" parent="." groups=["ITEM"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(-0.5, 1)
+shape = SubResource("RectangleShape2D_ep58y")
