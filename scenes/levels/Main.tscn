@@ -17,7 +17,8 @@ b = Vector2(0, 10000)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_d5ap6")
-Islands = Array[PackedScene]([ExtResource("1_u2t5b"), ExtResource("2_7ilwi"), ExtResource("4_j74j8"), ExtResource("5_lcem3")])
+Islands = Array[PackedScene]([ExtResource("2_7ilwi"), ExtResource("4_j74j8"), ExtResource("5_lcem3")])
+MapSize = 10000
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_bkgmu")]
 
@@ -48,3 +49,6 @@ script = ExtResource("5_yyto3")
 InventoryPath = NodePath("Inventory")
 
 [node name="Inventory" parent="UserInterface" instance=ExtResource("6_8h3iw")]
+
+[node name="CharacterBody2D" parent="." instance=ExtResource("1_u2t5b")]
+position = Vector2(940, 544)

@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://cx58gbjddq43f" path="res://scenes/Items/Shower.tscn" id="7_ncwsw"]
 
 [node name="MainIsland" type="Node2D"]
+z_index = 1
 
 [node name="Area2D" type="Area2D" parent="." groups=["LAND"]]
 position = Vector2(325, 135)
