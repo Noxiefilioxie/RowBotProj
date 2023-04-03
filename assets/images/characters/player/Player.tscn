@@ -1,4 +1,4 @@
-[gd_scene load_steps=89 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=103 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 [ext_resource type="Texture2D" uid="uid://cww8jfasysi0a" path="res://assets/images/characters/rowboat_robot_feet.png" id="2_d5nci"]
@@ -11,7 +11,121 @@
 [ext_resource type="Texture2D" uid="uid://dsl7s5s3ftews" path="res://assets/images/characters/row-bot-down.png" id="8_lpytu"]
 [ext_resource type="Texture2D" uid="uid://bo1ht7ft65nwn" path="res://assets/images/characters/row-bot-left.png" id="9_vfqdd"]
 [ext_resource type="Texture2D" uid="uid://b4w87wgbqbq6v" path="res://assets/images/characters/row-bot-right.png" id="10_lvytb"]
+[ext_resource type="Texture2D" uid="uid://bsle54jv3l4w4" path="res://assets/images/characters/player/RowBotMove.png" id="11_bwbkf"]
 [ext_resource type="AudioStream" uid="uid://bxefeemeianop" path="res://assets/sounds/sfx/electic_razor.ogg" id="12_x4bgg"]
+
+[sub_resource type="Animation" id="Animation_gmixd"]
+resource_name = "MoveDown"
+length = 0.7
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3]
+}
+
+[sub_resource type="Animation" id="Animation_8j2b1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_0cudo"]
+resource_name = "MoveLeft"
+length = 0.7
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [4, 5, 6, 7]
+}
+
+[sub_resource type="Animation" id="Animation_47i76"]
+resource_name = "MoveRight"
+length = 0.7
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [8, 9, 10, 11]
+}
+
+[sub_resource type="Animation" id="Animation_p14ss"]
+resource_name = "MoveUp"
+length = 0.7
+loop_mode = 1
+step = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [12, 13, 14, 15]
+}
+
+[sub_resource type="Animation" id="Animation_80hgm"]
+resource_name = "Idle"
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_hvwob"]
+_data = {
+"Idle": SubResource("Animation_80hgm"),
+"MoveDown": SubResource("Animation_gmixd"),
+"MoveLeft": SubResource("Animation_0cudo"),
+"MoveRight": SubResource("Animation_47i76"),
+"MoveUp": SubResource("Animation_p14ss"),
+"RESET": SubResource("Animation_8j2b1")
+}
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_yirao"]
 radius = 31.0
@@ -547,9 +661,43 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tggea"]
 size = Vector2(31, 31)
 
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_n5vu7"]
+animation = &"Idle"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_d4oo8"]
+animation = &"MoveUp"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_doxit"]
+animation = &"MoveDown"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_l0h4g"]
+animation = &"MoveRight"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_r0q2e"]
+animation = &"MoveLeft"
+
+[sub_resource type="AnimationNodeBlendSpace2D" id="AnimationNodeBlendSpace2D_7qx3v"]
+blend_point_0/node = SubResource("AnimationNodeAnimation_n5vu7")
+blend_point_0/pos = Vector2(0, 0)
+blend_point_1/node = SubResource("AnimationNodeAnimation_d4oo8")
+blend_point_1/pos = Vector2(0, -1)
+blend_point_2/node = SubResource("AnimationNodeAnimation_doxit")
+blend_point_2/pos = Vector2(0, 1)
+blend_point_3/node = SubResource("AnimationNodeAnimation_l0h4g")
+blend_point_3/pos = Vector2(1, 0)
+blend_point_4/node = SubResource("AnimationNodeAnimation_r0q2e")
+blend_point_4/pos = Vector2(-1, 0)
+blend_mode = 1
+
 [node name="CharacterBody2D" type="CharacterBody2D"]
 z_index = 2
 script = ExtResource("1_vpmjk")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Player/LandGFX/GFX")
+libraries = {
+"": SubResource("AnimationLibrary_hvwob")
+}
 
 [node name="Camera2D" type="Camera2D" parent="."]
 rotation = 1.5708
@@ -698,6 +846,7 @@ gravity = Vector2(0, 0)
 color = Color(0, 0, 0, 1)
 
 [node name="MoveLeft" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
+visible = false
 sprite_frames = SubResource("SpriteFrames_e80m3")
 
 [node name="CPUParticles2D5" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveLeft"]
@@ -750,6 +899,10 @@ emission_rect_extents = Vector2(1.855, 2.388)
 gravity = Vector2(0, 0)
 color = Color(0, 0, 0, 1)
 
+[node name="GFX" type="Sprite2D" parent="Player/LandGFX"]
+texture = ExtResource("11_bwbkf")
+hframes = 16
+
 [node name="SFX" type="Node2D" parent="Player"]
 
 [node name="Row" type="AudioStreamPlayer2D" parent="Player/SFX"]
@@ -767,6 +920,12 @@ pitch_scale = 0.65
 [node name="LandCheck" type="CollisionShape2D" parent="LandCheck"]
 position = Vector2(-0.5, 0.5)
 shape = SubResource("RectangleShape2D_tggea")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+tree_root = SubResource("AnimationNodeBlendSpace2D_7qx3v")
+anim_player = NodePath("../AnimationPlayer")
+active = true
+parameters/blend_position = Vector2(-0.000739098, -0.00699306)
 
 [connection signal="area_entered" from="LandCheck" to="." method="_on_land_check_area_entered"]
 [connection signal="area_exited" from="LandCheck" to="." method="_on_land_check_area_exited"]

@@ -16,12 +16,9 @@ public partial class Player : CharacterBody2D
 	private Node2D landGFX;
 	private Node2D boatGFX;
 
+	private AnimationTree animationTree;
 
 	private AnimatedSprite2D animation;
-	private AnimatedSprite2D moveUpAnimation;
-	private AnimatedSprite2D moveDownAnimation;
-	private AnimatedSprite2D moveLeftAnimation;
-	private AnimatedSprite2D moveRightAnimation;
 	private AnimatedSprite2D oreAnimation;
 
 
@@ -39,8 +36,7 @@ public partial class Player : CharacterBody2D
 
 	public override void _Ready()
     {
-
-		InitMovementAnimations();
+		animationTree = GetNode<AnimationTree>("AnimationTree");
 
         oreAnimation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/OreAnimation");
         animation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/PlayerAnimation");   
@@ -50,14 +46,6 @@ public partial class Player : CharacterBody2D
         ripples = GetNode<Node2D>("Player/BoatGFX/Ripples");
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
-
-		//GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Pump").Visible = false;
-  //      GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Battery").Visible = false;
-  //      GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Monitor").Visible = false;
-  //      GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Shower").Visible = false;
-  //      GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/Pipe").Visible = false;
-
-
     }
 
     public override void _Process(double delda)
@@ -167,9 +155,6 @@ public partial class Player : CharacterBody2D
 		Rotation = 0f;
         Vector2 velocity = Velocity;
 
-
-		// Get the input direction and handle the movement/deceleration.
-		// As good practice, you should replace UI actions with custom gameplay actions.
 		if (direction != Vector2.Zero)
 		{
 			velocity.X = direction.X * Speed;
@@ -228,60 +213,10 @@ public partial class Player : CharacterBody2D
     }
 
 
-	private void InitMovementAnimations()
-    {
-        moveUpAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveUp");
-        moveDownAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveDown");
-        moveLeftAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveLeft");
-        moveRightAnimation = GetNode<AnimatedSprite2D>("Player/LandGFX/Animations/MoveRight");
-    }
-
-	private void ResetMoveAnimations(AnimatedSprite2D exclude)
-	{
-	    foreach (var anim in new[] { moveUpAnimation, moveDownAnimation, moveLeftAnimation, moveRightAnimation })
-	    {
-	        if (anim != exclude)
-	        {
-	            anim.Visible = false;
-	            anim.Stop();
-	        }
-	    }
-	}
-
 	private void MoveAnimations(Vector2 direction)
 	{
-	    if (direction == Vector2.Up)
-	    {
-	        moveUpAnimation.Visible = true;
-	        moveUpAnimation.Play();
-	        ResetMoveAnimations(moveUpAnimation);
-	    }
-	    else if (direction == Vector2.Down)
-	    {
-	        moveDownAnimation.Visible = true;
-	        moveDownAnimation.Play();
-	        ResetMoveAnimations(moveDownAnimation);
-	    }
-	    else if (direction == Vector2.Left)
-	    {
-	        moveLeftAnimation.Visible = true;
-	        moveLeftAnimation.Play();
-	        ResetMoveAnimations(moveLeftAnimation);
-	    }
-	    else if (direction == Vector2.Right)
-	    {
-	        moveRightAnimation.Visible = true;
-	        moveRightAnimation.Play();
-	        ResetMoveAnimations(moveRightAnimation);
-	    }
-		else
-		{
-			moveUpAnimation.Pause();
-			moveDownAnimation.Pause();
-			moveRightAnimation.Pause();
-			moveLeftAnimation.Pause();
 
-		}
+		animationTree.Set("parameters/blend_position", direction);
 	}
 
 

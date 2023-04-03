@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://clynithxy31in"]
 
-[ext_resource type="Texture2D" uid="uid://8mcglufiycas" path="res://assets/images/inventory/rowbot-items.png" id="1_cshfi"]
+[ext_resource type="Texture2D" uid="uid://novimbjh45aa" path="res://assets/images/inventory/rowbot-items.png" id="1_cshfi"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ep58y"]
 size = Vector2(29, 30)

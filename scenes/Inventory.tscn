@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://d0m52kg2sl835"]
 
-[ext_resource type="Texture2D" uid="uid://dtkkfo00knmaw" path="res://assets/images/inventory/rowbot-inventory.png" id="1_gop6c"]
+[ext_resource type="Texture2D" uid="uid://n5iuqfnu5oos" path="res://assets/images/inventory/rowbot-inventory.png" id="1_gop6c"]
 [ext_resource type="PackedScene" uid="uid://clynithxy31in" path="res://scenes/Items/Battery.tscn" id="2_mm7p6"]
 [ext_resource type="PackedScene" uid="uid://dwfhm4b5q546o" path="res://scenes/Items/Monitor.tscn" id="3_v40kf"]
 [ext_resource type="PackedScene" uid="uid://v44o8lsh7xwp" path="res://scenes/Items/Pipe.tscn" id="4_owmx3"]
