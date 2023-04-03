@@ -824,53 +824,9 @@ sprite_frames = SubResource("SpriteFrames_p0un3")
 frame = 3
 frame_progress = 0.990448
 
-[node name="CPUParticles2D3" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveUp"]
-z_index = -1
-position = Vector2(-5, 13)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
-
-[node name="CPUParticles2D4" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveUp"]
-z_index = -1
-position = Vector2(6, 13)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
-
 [node name="MoveLeft" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
 visible = false
 sprite_frames = SubResource("SpriteFrames_e80m3")
-
-[node name="CPUParticles2D5" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveLeft"]
-z_index = -1
-position = Vector2(8, 14)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
-
-[node name="CPUParticles2D6" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveLeft"]
-z_index = -1
-position = Vector2(8, 3)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
 
 [node name="MoveRight" type="AnimatedSprite2D" parent="Player/LandGFX/Animations"]
 visible = false
@@ -878,31 +834,54 @@ sprite_frames = SubResource("SpriteFrames_csdck")
 frame = 1
 frame_progress = 0.947234
 
-[node name="CPUParticles2D7" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveRight"]
-z_index = -1
-position = Vector2(-7, 15)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
-
-[node name="CPUParticles2D8" type="CPUParticles2D" parent="Player/LandGFX/Animations/MoveRight"]
-z_index = -1
-position = Vector2(-8, 3)
-lifetime = 0.25
-randomness = 1.0
-lifetime_randomness = 1.0
-emission_shape = 3
-emission_rect_extents = Vector2(1.855, 2.388)
-gravity = Vector2(0, 0)
-color = Color(0, 0, 0, 1)
-
 [node name="GFX" type="Sprite2D" parent="Player/LandGFX"]
 texture = ExtResource("11_bwbkf")
 hframes = 16
+
+[node name="CPUParticles2D7" type="CPUParticles2D" parent="Player/LandGFX/GFX"]
+z_index = -1
+position = Vector2(-6, 3)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D8" type="CPUParticles2D" parent="Player/LandGFX/GFX"]
+z_index = -1
+position = Vector2(6, 3)
+scale = Vector2(1.12, 1)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D5" type="CPUParticles2D" parent="Player/LandGFX/GFX"]
+z_index = -1
+position = Vector2(-6, 15)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
+
+[node name="CPUParticles2D6" type="CPUParticles2D" parent="Player/LandGFX/GFX"]
+z_index = -1
+position = Vector2(-4, 3)
+lifetime = 0.25
+randomness = 1.0
+lifetime_randomness = 1.0
+emission_shape = 3
+emission_rect_extents = Vector2(1.855, 2.388)
+gravity = Vector2(0, 0)
+color = Color(0, 0, 0, 1)
 
 [node name="SFX" type="Node2D" parent="Player"]
 
@@ -930,7 +909,7 @@ shape = SubResource("RectangleShape2D_tggea")
 tree_root = SubResource("AnimationNodeBlendSpace2D_7qx3v")
 anim_player = NodePath("../AnimationPlayer")
 active = true
-parameters/blend_position = Vector2(-0.000739098, -0.00699306)
+parameters/blend_position = Vector2(0.612713, -0.0305676)
 
 [connection signal="area_entered" from="LandCheck" to="." method="_on_land_check_area_entered"]
 [connection signal="area_exited" from="LandCheck" to="." method="_on_land_check_area_exited"]
