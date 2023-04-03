@@ -25,6 +25,7 @@ public partial class Player : CharacterBody2D
 
 	private AudioStreamPlayer2D rowSFX;
 	private AudioStreamPlayer2D threadsSFX;
+	private AudioStreamPlayer2D pickupItemSFX;
 
 
 	private float rowForce = 10f;
@@ -46,6 +47,7 @@ public partial class Player : CharacterBody2D
         ripples = GetNode<Node2D>("Player/BoatGFX/Ripples");
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
+		pickupItemSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Pickup");
     }
 
     public override void _Process(double delda)
@@ -236,6 +238,8 @@ public partial class Player : CharacterBody2D
             var item = GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/{area.GetParent().Name}");
 			item.ZIndex = 0;
             area.GetParent().QueueFree();
+			pickupItemSFX.Play();
+
 		}
 	}
 
