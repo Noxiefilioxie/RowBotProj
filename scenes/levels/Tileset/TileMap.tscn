@@ -1,6 +1,10 @@
-[gd_scene load_steps=4 format=3 uid="uid://bk1c5q8ckhrk8"]
+[gd_scene load_steps=12 format=3 uid="uid://bk1c5q8ckhrk8"]
 
 [ext_resource type="Texture2D" uid="uid://by02bfdlnhdi8" path="res://scenes/levels/Tileset/Row-Bot_Tiles.png" id="1_7sfc6"]
+[ext_resource type="Texture2D" uid="uid://c6vmy8rcgqjn7" path="res://assets/images/Environment/rowbot-largebushes.png" id="2_jkkl8"]
+[ext_resource type="Texture2D" uid="uid://hwgpsbla80fp" path="res://assets/images/Environment/rowbot-largerocks.png" id="3_pc4pp"]
+[ext_resource type="Texture2D" uid="uid://d5g4e3ck018a" path="res://assets/images/Environment/rowbot-smallbushes.png" id="4_q6m4x"]
+[ext_resource type="Texture2D" uid="uid://da06bfxiermjt" path="res://assets/images/Environment/rowbot-smallrocks.png" id="5_d7ay3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_41n8g"]
 texture = ExtResource("1_7sfc6")
@@ -368,6 +372,42 @@ texture_region_size = Vector2i(32, 32)
 4:6/0/terrains_peering_bit/top_side = 1
 4:6/0/terrains_peering_bit/top_right_corner = 1
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_6nrmb"]
+texture = ExtResource("2_jkkl8")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_svd58"]
+texture = ExtResource("3_pc4pp")
+texture_region_size = Vector2i(64, 64)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_op10n"]
+texture = ExtResource("4_q6m4x")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mbxax"]
+texture = ExtResource("5_d7ay3")
+texture_region_size = Vector2i(32, 32)
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+3:0/0 = 0
+4:0/0 = 0
+
 [sub_resource type="TileSet" id="TileSet_gsn4i"]
 tile_size = Vector2i(32, 32)
 terrain_set_0/mode = 0
@@ -376,7 +416,12 @@ terrain_set_0/terrain_0/color = Color(0.501961, 1, 0.25098, 1)
 terrain_set_0/terrain_1/name = "Grass"
 terrain_set_0/terrain_1/color = Color(0, 0, 1, 1)
 sources/1 = SubResource("TileSetAtlasSource_41n8g")
+sources/4 = SubResource("TileSetAtlasSource_6nrmb")
+sources/5 = SubResource("TileSetAtlasSource_svd58")
+sources/7 = SubResource("TileSetAtlasSource_op10n")
+sources/8 = SubResource("TileSetAtlasSource_mbxax")
 
 [node name="TileMap" type="TileMap"]
 tile_set = SubResource("TileSet_gsn4i")
+cell_quadrant_size = 64
 format = 2

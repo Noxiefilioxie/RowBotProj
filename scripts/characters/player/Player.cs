@@ -10,7 +10,7 @@ public partial class Player : CharacterBody2D
 	private float acceleration = 50;
 	private float friction = 25f;
 
-	private float Speed = 50f;
+	private float Speed = 200f;
 
 	private Node2D ripples;
 	private Node2D landGFX;
@@ -19,7 +19,6 @@ public partial class Player : CharacterBody2D
 	private AnimationTree animationTree;
 
 	private AnimatedSprite2D animation;
-	private AnimatedSprite2D oreAnimation;
 
 
 
@@ -39,7 +38,6 @@ public partial class Player : CharacterBody2D
     {
 		animationTree = GetNode<AnimationTree>("AnimationTree");
 
-        oreAnimation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/OreAnimation");
         animation = GetNode<AnimatedSprite2D>("Player/BoatGFX/Animations/PlayerAnimation");   
 		landGFX = GetNode<Node2D>("Player/LandGFX");
 		boatGFX = GetNode<Node2D>("Player/BoatGFX"); 
@@ -66,7 +64,6 @@ public partial class Player : CharacterBody2D
             rowSFX.Stop();
 			boatGFX.Visible = false;;
 
-            oreAnimation.Visible = false;
             animation.Visible = false;
             landGFX.Visible = true;
             MoveAnimations(direction);
@@ -74,7 +71,6 @@ public partial class Player : CharacterBody2D
         else
         {
 			boatGFX.Visible = true;
-            oreAnimation.Visible = true;
             animation.Visible = true;
             landGFX.Visible = false;
         }
@@ -82,7 +78,6 @@ public partial class Player : CharacterBody2D
         if (IsRowing)
         {
             animation.Play("Row");
-            oreAnimation.Play("Row");
             if (rowSFX.Playing != true)
             {
                 rowSFX.Play();
@@ -96,7 +91,6 @@ public partial class Player : CharacterBody2D
             }
 
             animation.Stop();
-            oreAnimation.Stop();
         }
 
 
