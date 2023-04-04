@@ -7,7 +7,7 @@ public partial class Main : Node2D
     [Export]
     public PackedScene[] Islands;
     [Export]
-    public int MapSize = 5000;
+    public int MapSize = 10000;
     public int ObjectSize = 60;
     private HashSet<Rect2> occupiedTiles = new HashSet<Rect2>();
 

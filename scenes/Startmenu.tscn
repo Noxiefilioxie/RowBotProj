@@ -69,6 +69,16 @@ Carl A
 Rickard H
 
 Music: CC0
-Art done by Carl A"
+Art done by Carl A
+
+SFX
+Robot SFX
+Lee Barkovich
+http://www.archive.org/details/Berklee44Barkovich http://www.lbarkovich.com/
+and 
+Vinrax
+http://vinraxarts.ru
+
+"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_28pfh")]
