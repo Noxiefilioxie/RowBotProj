@@ -54,7 +54,7 @@ sources/3 = SubResource("TileSetAtlasSource_l1m1b")
 [node name="ThirdIsland" type="Node2D"]
 z_index = 1
 
-[node name="Area2D" type="Area2D" parent="." groups=["LAND"]]
+[node name="Area2D" type="Area2D" parent="."]
 position = Vector2(176, 72)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
@@ -91,17 +91,20 @@ layer_0/tile_data = PackedInt32Array(3538971, 0, 0, 3538966, 0, 0, 3866651, 0, 0
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(3, 1)
+position = Vector2(71, 70)
+scale = Vector2(0.624393, 0.59154)
 polygon = PackedVector2Array(213, 143, 209, 138, 175, 119, 156, 133, 147, 154, 174, 180, 185, 207, 221, 218, 250, 212, 248, 164)
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(94, 0)
+position = Vector2(123, 17)
+scale = Vector2(0.850379, 0.884964)
 polygon = PackedVector2Array(229, 142, 209, 138, 189, 138, 176, 144, 170, 163, 174, 180, 185, 207, 216, 204, 235, 189, 236, 167)
 
 [node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(11, 206)
+position = Vector2(76, 279)
+scale = Vector2(0.680556, 0.604167)
 polygon = PackedVector2Array(229, 142, 209, 138, 189, 138, 176, 144, 170, 163, 160, 178, 146, 228, 210, 234, 220, 211, 236, 167)
 
 [node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -121,112 +124,126 @@ polygon = PackedVector2Array(287, 147, 317, 160, 327, 200, 288, 211, 263, 183, 2
 
 [node name="CollisionPolygon2D7" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(311, 166)
+scale = Vector2(0.692308, 0.736164)
 polygon = PackedVector2Array(483, -3, 506, 69, 575, 55, 569, 20, 604, -7, 583, -42, 544, -62, 500, -49, 474, -24)
 
 [node name="CollisionPolygon2D8" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(250, 195)
+scale = Vector2(0.701199, 0.908654)
 polygon = PackedVector2Array(345, 246, 326, 271, 336, 298, 381, 298, 399, 265, 376, 247)
 
 [node name="CollisionPolygon2D9" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(368, 289)
+scale = Vector2(0.570833, 0.629808)
 polygon = PackedVector2Array(511, 311, 483, 361, 539, 376, 558, 337, 541, 315)
 
 [node name="CollisionPolygon2D10" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(276, 291)
+scale = Vector2(0.620192, 0.643009)
 polygon = PackedVector2Array(354, 331, 316, 324, 311, 382, 347, 383, 376, 360, 364, 339)
 
 [node name="CollisionPolygon2D11" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(216, 227)
+scale = Vector2(0.7375, 0.8125)
 polygon = PackedVector2Array(233, 313, 245, 332, 227, 345, 235, 374, 286, 368, 302, 336, 280, 311)
 
 [node name="CollisionPolygon2D12" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(204, 418, 265, 422, 259, 441, 256, 479, 221, 482, 195, 465, 209, 454, 213, 439, 200, 435)
+polygon = PackedVector2Array(217, 424, 246, 428, 259, 441, 250, 462, 228, 475, 207, 465, 209, 454, 213, 439, 200, 435)
 
 [node name="CollisionPolygon2D13" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(184, 423, 141, 402, 100, 402, 89, 436, 88, 458, 108, 470, 79, 484, 57, 508, 61, 549, 102, 540, 168, 531, 156, 501, 169, 481, 155, 461)
+polygon = PackedVector2Array(169, 431, 155, 413, 127, 413, 102, 417, 96, 448, 108, 470, 89, 491, 67, 515, 69, 534, 99, 527, 148, 526, 156, 501, 161, 481, 155, 461)
 
 [node name="CollisionPolygon2D14" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(150, 189)
+scale = Vector2(0.849702, 0.933769)
 polygon = PackedVector2Array(36, 355, 67, 308, 21, 288, -17, 297, -3, 340)
 
 [node name="CollisionPolygon2D15" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(-3, 403, -42, 403, -40, 433, -37, 461, 12, 455, 35, 434, 10, 403)
+polygon = PackedVector2Array(-2, 410, -25, 412, -40, 433, -37, 461, 12, 455, 14, 440, 10, 420)
 
 [node name="CollisionPolygon2D16" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(-27, 633, -55, 636, -48, 660, -56, 686, 17, 677, 5, 635)
+polygon = PackedVector2Array(-27, 633, -55, 636, -48, 660, -56, 686, -1, 674, -8, 641)
 
 [node name="CollisionPolygon2D17" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(164, 559, 143, 636, 167, 656, 99, 705, 112, 737, 151, 732, 195, 722, 253, 721, 277, 740, 276, 810, 275, 895, 271, 923, 211, 902, 206, 840, 199, 789, 137, 763, 81, 786, 61, 811, 101, 821, 156, 818, 158, 1030, 315, 1039, 321, 923, 389, 900, 377, 845, 329, 835, 325, 668, 277, 653, 204, 672, 202, 589, 199, 543)
+polygon = PackedVector2Array(164, 559, 169, 612, 167, 656, 118, 711, 124, 729, 151, 716, 193, 708, 255, 710, 289, 725, 287, 805, 290, 895, 286, 924, 193, 925, 191, 852, 189, 804, 135, 775, 88, 788, 77, 807, 116, 800, 162, 805, 158, 1030, 315, 1039, 321, 923, 368, 890, 355, 859, 329, 835, 317, 679, 283, 671, 204, 672, 202, 589, 192, 555)
 
 [node name="CollisionPolygon2D18" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(285, 551, 310, 548, 312, 567, 290, 580, 275, 564)
+polygon = PackedVector2Array(289, 556, 304, 556, 302, 568, 293, 569, 282, 564)
 
 [node name="CollisionPolygon2D19" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
-polygon = PackedVector2Array(396, 539, 388, 570, 405, 592, 434, 585, 460, 572, 446, 544, 428, 530)
+position = Vector2(155, 165)
+polygon = PackedVector2Array(396, 539, 388, 570, 405, 592, 432, 580, 437, 568, 439, 554, 427, 539)
 
 [node name="CollisionPolygon2D20" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
 position = Vector2(146, 167)
-polygon = PackedVector2Array(434, 743, 420, 768, 427, 793, 448, 802, 466, 792, 488, 774, 476, 742)
+polygon = PackedVector2Array(439, 752, 434, 769, 434, 787, 449, 794, 466, 789, 476, 780, 461, 752)
 
 [node name="CollisionPolygon2D21" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(265, 273)
+scale = Vector2(0.8125, 0.84059)
 polygon = PackedVector2Array(616, 625, 638, 646, 657, 638, 689, 658, 701, 692, 676, 714, 659, 704, 625, 706, 612, 691, 585, 678, 582, 658, 586, 628)
 
 [node name="CollisionPolygon2D22" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(268, 245)
+scale = Vector2(0.802734, 0.849265)
 polygon = PackedVector2Array(599, 481, 614, 493, 612, 502, 599, 504, 599, 520, 629, 531, 663, 521, 663, 503, 663, 481, 651, 467, 618, 463)
 
 [node name="CollisionPolygon2D23" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(384, 229)
+scale = Vector2(0.669779, 0.758655)
 polygon = PackedVector2Array(737, 221, 711, 212, 683, 225, 677, 257, 717, 279, 725, 293, 778, 291, 786, 259, 775, 224, 744, 222)
 
 [node name="CollisionPolygon2D24" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(475, 219)
+scale = Vector2(0.628677, 0.579449)
 polygon = PackedVector2Array(858, 106, 854, 157, 922, 159, 920, 122, 898, 106, 869, 100)
 
 [node name="CollisionPolygon2D25" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(460, 245)
+scale = Vector2(0.721481, 0.657541)
 polygon = PackedVector2Array(1073, 190, 1122, 278, 1176, 263, 1172, 213, 1132, 157, 1086, 164)
 
 [node name="CollisionPolygon2D26" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(474, 175)
+scale = Vector2(0.682291, 0.671655)
 polygon = PackedVector2Array(1027, 0, 1015, 41, 1061, 48, 1087, 14, 1076, -5, 1038, -23)
 
 [node name="CollisionPolygon2D27" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(688, 141)
+scale = Vector2(0.5125, 0.685811)
 polygon = PackedVector2Array(1085, -73, 1108, -113, 1183, -97, 1174, -48, 1140, -39, 1102, -46, 1083, -81)
 
 [node name="CollisionPolygon2D28" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(327, 147)
+scale = Vector2(0.787162, 0.738487)
 polygon = PackedVector2Array(821, -78, 825, -37, 862, -19, 887, -40, 895, -81, 881, -92, 848, -95)
 
 [node name="CollisionPolygon2D29" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -236,52 +253,62 @@ polygon = PackedVector2Array(750, -121, 747, -92, 765, -73, 797, -83, 813, -99, 
 
 [node name="CollisionPolygon2D30" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
-polygon = PackedVector2Array(734, 20, 726, 41, 735, 67, 767, 64, 798, 41, 782, 17, 754, -5)
+position = Vector2(340, 174)
+scale = Vector2(0.743055, 0.829861)
+polygon = PackedVector2Array(734, 20, 726, 41, 735, 67, 767, 64, 798, 41, 782, 17, 754.991, 4.8201)
 
 [node name="CollisionPolygon2D31" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(429, 228)
+scale = Vector2(0.695975, 0.711397)
 polygon = PackedVector2Array(926, 195, 922, 222, 950, 241, 981, 226, 975, 184, 951, 173)
 
 [node name="CollisionPolygon2D32" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(522, 255)
+scale = Vector2(0.618243, 0.6875)
 polygon = PackedVector2Array(966, 267, 964, 281, 945, 283, 964, 311, 1018, 294, 1019, 254, 977, 236, 952, 246)
 
 [node name="CollisionPolygon2D33" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(484, 268)
+scale = Vector2(0.638889, 0.695975)
 polygon = PackedVector2Array(919, 320, 898, 352, 937, 371, 957, 357, 970, 328, 949, 312)
 
 [node name="CollisionPolygon2D34" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(439, 290)
+scale = Vector2(0.724116, 0.736743)
 polygon = PackedVector2Array(1019, 445, 1052, 494, 1086, 499, 1118, 473, 1107, 441, 1078, 415, 1056, 400, 1030, 407, 1019, 427)
 
 [node name="CollisionPolygon2D35" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(563, 355)
+scale = Vector2(0.559336, 0.582237)
 polygon = PackedVector2Array(921, 435, 913, 467, 943, 485, 976, 475, 992, 453, 979, 427, 947, 409, 927, 425)
 
 [node name="CollisionPolygon2D36" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(338, 383)
+scale = Vector2(0.760629, 0.574701)
 polygon = PackedVector2Array(834, 474, 794, 458, 762, 466, 764, 492, 765, 506, 753, 519, 753, 519, 796, 534, 833, 548, 874, 547, 866, 507, 855, 474)
 
 [node name="CollisionPolygon2D37" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(405, 288)
+scale = Vector2(0.774622, 0.784515)
 polygon = PackedVector2Array(1108, 564, 1134, 589, 1158, 597, 1173, 583, 1174, 555, 1156, 535, 1135, 530, 1111, 548)
 
 [node name="CollisionPolygon2D38" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
-polygon = PackedVector2Array(1034, 604, 1009, 635, 1014, 653, 1029, 679, 1077, 676, 1081, 631, 1071, 598)
+position = Vector2(469, 342)
+scale = Vector2(0.690972, 0.727623)
+polygon = PackedVector2Array(1034, 604, 1009, 635, 1014, 653, 1029, 679, 1077, 676, 1081, 631, 1069.51, 607.457)
 
 [node name="CollisionPolygon2D39" type="CollisionPolygon2D" parent="StaticBody2D"]
 z_index = 1
-position = Vector2(146, 167)
+position = Vector2(387, 356)
+scale = Vector2(0.681903, 0.703373)
 polygon = PackedVector2Array(731, 622, 727, 664, 769, 671, 793, 640, 779, 619, 748, 608, 726, 617)
 
 [node name="CollisionPolygon2D40" type="CollisionPolygon2D" parent="StaticBody2D"]
