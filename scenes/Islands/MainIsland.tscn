@@ -1,4 +1,4 @@
-[gd_scene load_steps=65 format=3 uid="uid://c6ffr807qld3x"]
+[gd_scene load_steps=66 format=3 uid="uid://c6ffr807qld3x"]
 
 [ext_resource type="PackedScene" uid="uid://jnoavsbirukt" path="res://scenes/levels/Tileset/IslandTemplate.tscn" id="1_d5oiy"]
 [ext_resource type="PackedScene" uid="uid://bk1c5q8ckhrk8" path="res://scenes/levels/Tileset/TileMap.tscn" id="2_rkjym"]
@@ -204,6 +204,9 @@ size = Vector2(277, 8)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ih8c8"]
 size = Vector2(208.5, 4)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_vw2qe"]
+radius = 34.5254
 
 [node name="MainIsland" type="Node2D"]
 z_index = 1
@@ -571,3 +574,19 @@ shape = SubResource("RectangleShape2D_ih8c8")
 [node name="CollisionShape2D48" type="CollisionShape2D" parent="StaticBody2D"]
 position = Vector2(1219.25, 951)
 shape = SubResource("RectangleShape2D_ih8c8")
+
+[node name="Finish" type="Area2D" parent="." groups=["FINISH"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Finish"]
+position = Vector2(872, 919)
+shape = SubResource("CircleShape2D_vw2qe")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Finish/CollisionShape2D"]
+emission_shape = 1
+emission_sphere_radius = 67.55
+spread = 90.26
+gravity = Vector2(0, -979.094)
+scale_amount_max = 4.0
+color = Color(0.913725, 0.839216, 0.584314, 1)
+hue_variation_min = -0.77
+hue_variation_max = 0.47

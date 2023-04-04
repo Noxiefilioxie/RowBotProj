@@ -235,6 +235,14 @@ public partial class Player : CharacterBody2D
 			pickupItemSFX.Play();
 
 		}
+
+
+        if (area.IsInGroup("FINISH"))
+		{
+
+            GetTree().ChangeSceneToFile("res://scenes/Outro.tscn");
+
+		}
 	}
 
 
