@@ -10,6 +10,10 @@ namespace RowBot.scripts.startmenu
 
     public partial class Startmenu : Control
     {
+
+
+        [Export]
+        public PackedScene IntroScene;
         [Export]
         public PackedScene MainScene;
         public override void _Ready()
@@ -25,7 +29,8 @@ namespace RowBot.scripts.startmenu
 
         private void StartGame()
         {
-            GetTree().ChangeSceneToFile(MainScene.ResourcePath);
+            GetTree().ChangeSceneToFile(IntroScene.ResourcePath);
+            //GetTree().ChangeSceneToFile(MainScene.ResourcePath);
             GD.Print("Resuming game...");
             // Your resume game logic here
         }

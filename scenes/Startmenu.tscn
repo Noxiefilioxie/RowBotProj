@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cvq4anx5ddc0b"]
+[gd_scene load_steps=7 format=3 uid="uid://cvq4anx5ddc0b"]
 
 [ext_resource type="Script" path="res://scripts/startmenu/Startmenu.cs" id="1_g88o3"]
 [ext_resource type="PackedScene" uid="uid://cy3mw852vhbq6" path="res://scenes/levels/Main.tscn" id="2_2c81j"]
 [ext_resource type="Texture2D" uid="uid://dpoqtcuuey05l" path="res://assets/images/uglyleopard.png" id="2_sahnw"]
+[ext_resource type="PackedScene" uid="uid://eowf6k4q5t8c" path="res://scenes/Intro.tscn" id="2_uq7tg"]
 [ext_resource type="Texture2D" uid="uid://dwh0giiawyjao" path="res://assets/images/other/rowbot-logo.png" id="4_1lsp2"]
 [ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="4_28pfh"]
 
@@ -12,6 +13,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("1_g88o3")
+IntroScene = ExtResource("2_uq7tg")
 MainScene = ExtResource("2_2c81j")
 
 [node name="TextureRect" type="TextureRect" parent="."]
