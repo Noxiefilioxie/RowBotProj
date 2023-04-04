@@ -4,6 +4,8 @@ using System;
 
 public partial class Player : CharacterBody2D
 {
+
+    public int items = 0;
 	private bool previousIsOnLand = false;
 	private bool IsOnLand = false;
 	private bool IsRowing = false;
@@ -232,11 +234,10 @@ public partial class Player : CharacterBody2D
             var item = GetTree().Root.GetNode<Node2D>($"Main/UserInterface/Inventory/{area.GetParent().Name}");
 			item.ZIndex = 0;
             area.GetParent().QueueFree();
+            items++;
 			pickupItemSFX.Play();
 
 		}
-
-
         if (area.IsInGroup("FINISH"))
 		{
 

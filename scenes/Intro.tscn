@@ -433,9 +433,9 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Intro" type="Node2D"]
-
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_nb1ql")
 animation = &"1"
-frame_progress = 0.810774
+frame_progress = 0.0319781
+
+[node name="Intro" type="Node2D" parent="."]
