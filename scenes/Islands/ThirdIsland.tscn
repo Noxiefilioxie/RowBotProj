@@ -1,8 +1,7 @@
-[gd_scene load_steps=14 format=3 uid="uid://4guqkcud272y"]
+[gd_scene load_steps=13 format=3 uid="uid://4guqkcud272y"]
 
 [ext_resource type="PackedScene" uid="uid://bk1c5q8ckhrk8" path="res://scenes/levels/Tileset/TileMap.tscn" id="1_7j68v"]
 [ext_resource type="PackedScene" uid="uid://jnoavsbirukt" path="res://scenes/levels/Tileset/IslandTemplate.tscn" id="2_khhvr"]
-[ext_resource type="PackedScene" uid="uid://dbr76ap7o3aki" path="res://scenes/Items/Pump.tscn" id="3_yg0pp"]
 [ext_resource type="Texture2D" uid="uid://da06bfxiermjt" path="res://assets/images/Environment/rowbot-smallrocks.png" id="4_6bi8q"]
 [ext_resource type="Texture2D" uid="uid://d5g4e3ck018a" path="res://assets/images/Environment/rowbot-smallbushes.png" id="5_ld5sl"]
 [ext_resource type="Texture2D" uid="uid://c6vmy8rcgqjn7" path="res://assets/images/Environment/rowbot-largebushes.png" id="6_68eek"]
@@ -67,9 +66,6 @@ layer_0/tile_data = PackedInt32Array(131080, 65537, 1, 131081, 131073, 1, 65544,
 [node name="IslandTemplate" parent="." instance=ExtResource("2_khhvr")]
 visible = false
 position = Vector2(312, 102)
-
-[node name="Pump" parent="." instance=ExtResource("3_yg0pp")]
-position = Vector2(377, 927)
 
 [node name="Area2D2" type="Area2D" parent="." groups=["LAND"]]
 
