@@ -18,6 +18,9 @@ namespace RowBot.scripts.startmenu
             GetNode<Button>("StartButton").Connect("pressed", new Callable(this, nameof(StartGame)));
             GetNode<Button>("CreditsButton").Connect("pressed", new Callable(this, nameof(ShowCredits)));
             GetNode<Button>("ExitButton").Connect("pressed", new Callable(this, nameof(ExitGame)));
+
+            GetNode<RichTextLabel>("CreditsLabel").Visible = false;
+
         }
 
         private void StartGame()
@@ -34,6 +37,9 @@ namespace RowBot.scripts.startmenu
             GD.Print("Lead Programmer: Jonk");
             GD.Print("Lead Designer: Calle");
             GD.Print("CIO: Dick");
+            GD.Print(GetNode<RichTextLabel>("CreditsLabel"));
+            GetNode<RichTextLabel>("CreditsLabel").Visible = !GetNode<RichTextLabel>("CreditsLabel").Visible;
+
         }
 
         private void ExitGame()

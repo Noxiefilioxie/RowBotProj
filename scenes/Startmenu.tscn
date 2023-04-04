@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://cvq4anx5ddc0b"]
+[gd_scene load_steps=6 format=3 uid="uid://cvq4anx5ddc0b"]
 
 [ext_resource type="Script" path="res://scripts/startmenu/Startmenu.cs" id="1_g88o3"]
-[ext_resource type="PackedScene" uid="uid://c8cjp8km8kavt" path="res://scenes/levels/Main.tscn" id="2_2c81j"]
+[ext_resource type="PackedScene" uid="uid://cy3mw852vhbq6" path="res://scenes/levels/Main.tscn" id="2_2c81j"]
 [ext_resource type="Texture2D" uid="uid://dpoqtcuuey05l" path="res://assets/images/uglyleopard.png" id="2_sahnw"]
+[ext_resource type="Texture2D" uid="uid://dwh0giiawyjao" path="res://assets/images/other/rowbot-logo.png" id="4_1lsp2"]
 [ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="4_28pfh"]
 
 [node name="Startmenu" type="Control"]
@@ -15,49 +16,59 @@ MainScene = ExtResource("2_2c81j")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = -1.0
-offset_top = 464.0
-offset_right = 180.0
-offset_bottom = 629.0
+offset_left = 702.0
+offset_top = 384.0
+offset_right = 883.0
+offset_bottom = 549.0
 texture = ExtResource("2_sahnw")
 
-[node name="Rowbot" type="Label" parent="."]
+[node name="TextureRectLogo" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 450.0
-offset_top = 121.0
-offset_right = 873.0
-offset_bottom = 250.0
-theme_override_colors/font_color = Color(0.486275, 0.643137, 0.580392, 1)
-theme_override_colors/font_shadow_color = Color(0, 0, 0, 1)
-theme_override_font_sizes/font_size = 72
-text = "RowBot
-"
+offset_left = 795.0
+offset_top = 206.0
+offset_right = 1267.0
+offset_bottom = 370.0
+texture = ExtResource("4_1lsp2")
 
 [node name="StartButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 510.0
-offset_top = 229.0
-offset_right = 640.0
-offset_bottom = 260.0
+offset_left = 953.0
+offset_top = 410.0
+offset_right = 1085.0
+offset_bottom = 448.0
 text = "Start new game
 "
 
 [node name="CreditsButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 541.0
-offset_top = 264.0
-offset_right = 604.0
-offset_bottom = 295.0
+offset_left = 954.0
+offset_top = 456.0
+offset_right = 1083.0
+offset_bottom = 487.0
 text = "Credits
 "
 
 [node name="ExitButton" type="Button" parent="."]
 layout_mode = 0
-offset_left = 555.0
-offset_top = 300.0
-offset_right = 592.0
-offset_bottom = 331.0
+offset_left = 955.0
+offset_top = 497.0
+offset_right = 1083.0
+offset_bottom = 533.0
 text = "Exit
 "
+
+[node name="CreditsLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 1143.0
+offset_top = 412.0
+offset_right = 1554.0
+offset_bottom = 691.0
+text = "Developed by:
+Jonas H
+Carl A
+Rickard H
+
+Music: CC0
+Art done by Carl A"
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("4_28pfh")]
