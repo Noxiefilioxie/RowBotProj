@@ -54,7 +54,7 @@ sources/3 = SubResource("TileSetAtlasSource_l1m1b")
 [node name="ThirdIsland" type="Node2D"]
 z_index = 1
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="Area2D" type="Area2D" parent="." groups=["LAND"]]
 position = Vector2(176, 72)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]

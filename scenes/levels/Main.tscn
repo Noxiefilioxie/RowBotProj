@@ -1,13 +1,15 @@
-[gd_scene load_steps=11 format=3 uid="uid://cy3mw852vhbq6"]
+[gd_scene load_steps=13 format=3 uid="uid://cy3mw852vhbq6"]
 
 [ext_resource type="Script" path="res://scenes/levels/Main.cs" id="1_d5ap6"]
 [ext_resource type="PackedScene" uid="uid://dew43wrchwvhu" path="res://assets/images/characters/player/Player.tscn" id="1_u2t5b"]
 [ext_resource type="PackedScene" uid="uid://c6ffr807qld3x" path="res://scenes/Islands/MainIsland.tscn" id="2_7ilwi"]
 [ext_resource type="PackedScene" uid="uid://c0dn5ufky2irv" path="res://simple_water.tscn" id="2_bkgmu"]
 [ext_resource type="PackedScene" uid="uid://cbvajlpc010ae" path="res://scenes/Islands/SecondIsland.tscn" id="4_j74j8"]
+[ext_resource type="PackedScene" uid="uid://b3tfo5hvn7kl1" path="res://scenes/Islands/FourthIsland.tscn" id="5_hysfl"]
 [ext_resource type="PackedScene" uid="uid://4guqkcud272y" path="res://scenes/Islands/ThirdIsland.tscn" id="5_lcem3"]
 [ext_resource type="Script" path="res://scenes/levels/UserInterface.cs" id="5_yyto3"]
 [ext_resource type="PackedScene" uid="uid://d0m52kg2sl835" path="res://scenes/Inventory.tscn" id="6_8h3iw"]
+[ext_resource type="PackedScene" uid="uid://cq6w0kwfo6g0i" path="res://scenes/Islands/FifthIsland.tscn" id="6_c1ial"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8vccm"]
 b = Vector2(10000, 0)
@@ -17,7 +19,7 @@ b = Vector2(0, 10000)
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_d5ap6")
-Islands = Array[PackedScene]([ExtResource("2_7ilwi"), ExtResource("4_j74j8"), ExtResource("5_lcem3")])
+Islands = Array[PackedScene]([ExtResource("2_7ilwi"), ExtResource("4_j74j8"), ExtResource("5_lcem3"), ExtResource("5_hysfl"), ExtResource("6_c1ial")])
 MapSize = 10000
 
 [node name="ParallaxBackground" parent="." instance=ExtResource("2_bkgmu")]
