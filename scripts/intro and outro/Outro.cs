@@ -18,6 +18,8 @@ public partial class Outro : Node2D
 	[Export]
 	public AudioStreamPlayer Birds;
 
+	[Export]
+	public Panel Panel;
 
 	[Export]
 	public Sprite2D End;
@@ -47,6 +49,11 @@ public partial class Outro : Node2D
     // Called every frame. 'delta' is the elapsed time since the previous frame.
     public override void _Process(double delta)
 	{
+
+		if(Input.IsActionJustPressed("Space"))
+		{
+			OnAnimationFinished(AnimationPlayer.CurrentAnimation);
+		}
 
     }
 
@@ -82,12 +89,17 @@ public partial class Outro : Node2D
 		}
 		else if(animName == "Text4")
 		{
+			Panel.Visible = false;
 			Birds.Play();
 			End.Visible = true;
 			Text4.Visible = false;
 
 			AnimationPlayer.Play("End");
 			Sprite.Play("5");
+		}
+		else if(animName == "End")
+		{
+			GetTree().ChangeSceneToFile("res://scenes/Startmenu.tscn");
 		}
 
     }

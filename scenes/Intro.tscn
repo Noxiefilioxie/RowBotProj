@@ -293,7 +293,7 @@ tracks/5/keys = {
 
 [sub_resource type="Animation" id="Animation_q68q6"]
 resource_name = "Text1"
-length = 17.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -309,7 +309,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_kkti0"]
 resource_name = "Text2"
-length = 20.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -325,7 +325,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_24shg"]
 resource_name = "Text3"
-length = 22.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -341,7 +341,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_ap85r"]
 resource_name = "Text4"
-length = 20.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -357,7 +357,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_napir"]
 resource_name = "Text5"
-length = 22.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -373,7 +373,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_alqeq"]
 resource_name = "Text6"
-length = 22.0
+length = 45.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true

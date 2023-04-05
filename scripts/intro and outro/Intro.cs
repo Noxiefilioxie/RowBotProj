@@ -63,11 +63,10 @@ public partial class Intro : Node2D
     public override void _Process(double delta)
 	{
 
-		// if (!Sprite.IsPlaying())
-		// {
-		// 	GetTree().ChangeSceneToFile(MainScene.ResourcePath);
-
-		// }
+		if(Input.IsActionJustPressed("Space"))
+		{
+			OnAnimationFinished(AnimationPlayer.CurrentAnimation);
+		}
 	}
 
 

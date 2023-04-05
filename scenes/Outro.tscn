@@ -286,7 +286,7 @@ tracks/4/keys = {
 
 [sub_resource type="Animation" id="Animation_swm8d"]
 resource_name = "Text1"
-length = 15.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -302,7 +302,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_2unbw"]
 resource_name = "Text2"
-length = 15.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -318,7 +318,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_hpn50"]
 resource_name = "Text3"
-length = 20.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -334,7 +334,7 @@ tracks/0/keys = {
 
 [sub_resource type="Animation" id="Animation_vmkny"]
 resource_name = "Text4"
-length = 10.0
+length = 30.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
