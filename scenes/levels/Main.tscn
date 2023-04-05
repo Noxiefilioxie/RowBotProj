@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://cy3mw852vhbq6"]
+[gd_scene load_steps=13 format=3 uid="uid://cy3mw852vhbq6"]
 
 [ext_resource type="Script" path="res://scenes/levels/Main.cs" id="1_d5ap6"]
 [ext_resource type="PackedScene" uid="uid://dew43wrchwvhu" path="res://assets/images/characters/player/Player.tscn" id="1_u2t5b"]
@@ -10,7 +10,6 @@
 [ext_resource type="Script" path="res://scenes/levels/UserInterface.cs" id="5_yyto3"]
 [ext_resource type="PackedScene" uid="uid://d0m52kg2sl835" path="res://scenes/Inventory.tscn" id="6_8h3iw"]
 [ext_resource type="PackedScene" uid="uid://cq6w0kwfo6g0i" path="res://scenes/Islands/FifthIsland.tscn" id="6_c1ial"]
-[ext_resource type="PackedScene" uid="uid://clynithxy31in" path="res://scenes/Items/Battery.tscn" id="11_44x4d"]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_8vccm"]
 b = Vector2(10000, 0)
@@ -54,6 +53,3 @@ InventoryPath = NodePath("Inventory")
 
 [node name="Player" parent="." instance=ExtResource("1_u2t5b")]
 position = Vector2(940, 544)
-
-[node name="Battery" parent="." groups=["ISLANDITEM"] instance=ExtResource("11_44x4d")]
-position = Vector2(801, 686)
