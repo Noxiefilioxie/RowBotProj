@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://eowf6k4q5t8c"]
+[gd_scene load_steps=38 format=3 uid="uid://eowf6k4q5t8c"]
 
 [ext_resource type="Script" path="res://scripts/intro and outro/Intro.cs" id="1_ltqed"]
 [ext_resource type="Texture2D" uid="uid://4a4bflbl5koo" path="res://assets/images/other/Intro frames/row-bot-introframe1.png" id="1_os1b6"]
@@ -8,6 +8,42 @@
 [ext_resource type="Texture2D" uid="uid://bus8bsktjjmip" path="res://assets/images/other/Intro frames/row-bot-introframe4.png" id="4_jn22n"]
 [ext_resource type="Texture2D" uid="uid://4m2lof725vfe" path="res://assets/images/other/Intro frames/row-bot-introframe6.png" id="5_2wk1w"]
 [ext_resource type="Texture2D" uid="uid://c2dq02xmp40o6" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
+
+[sub_resource type="Animation" id="Animation_q68q6"]
+resource_name = "Text1"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_mfx6s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o1oc"]
+_data = {
+"RESET": SubResource("Animation_mfx6s"),
+"Text1": SubResource("Animation_q68q6")
+}
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q5mg"]
 atlas = ExtResource("1_os1b6")
@@ -210,16 +246,32 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite")]
+[sub_resource type="LabelSettings" id="LabelSettings_5rshh"]
+
+[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite", "AnimationPlayer")]
 script = ExtResource("1_ltqed")
 Sprite = NodePath("AnimatedSprite2D")
 MainScene = ExtResource("2_m6bd8")
+AnimationPlayer = NodePath("AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../Text1")
+libraries = {
+"": SubResource("AnimationLibrary_2o1oc")
+}
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 536.375)
 scale = Vector2(7.93333, 7.87593)
 sprite_frames = SubResource("SpriteFrames_nb1ql")
-animation = &"4"
-frame_progress = 0.596991
+animation = &"1"
 
-[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
+[node name="Text1" type="Label" parent="."]
+offset_top = 1016.0
+offset_right = 1920.0
+offset_bottom = 1068.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+label_settings = SubResource("LabelSettings_5rshh")
+autowrap_mode = 1
+visible_characters = 0
+visible_ratio = 0.0
