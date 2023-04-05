@@ -432,6 +432,7 @@ libraries = {
 }
 
 [node name="Text1" type="Label" parent="."]
+z_index = 1
 offset_left = 288.0
 offset_top = 902.0
 offset_right = 1538.0
@@ -439,11 +440,14 @@ offset_bottom = 1028.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Once upon a time, a small spaceship was hurtling through the infinite void of space. 
 For days, weeks, months, perhaps even years the ship had been on its way to an unknown goal."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text2" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -460,11 +464,14 @@ text = "Inside the small passenger capsule sat an egg-shaped robot. He was bored
 At least he thought so, robots of the same model as him were not really supposed to gain self-awareness; But it was a known risk of their particular logic circuits when left unmaintained for long periods of time.
 And the small robot had truly been left unmaintained. Since his owners had put him into the passenger compartment, his only travel companion had been a small sapling in a glass dome.
 The small robot couldn't really complain though, as for some to him unknown reason he felt a special bond to the plant. Almost as if it was his younger brother, or a close friend he had once lost and now found again."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text3" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -481,11 +488,14 @@ text = "Suddenly, the eternal boredom of nothingness was broken by an audiovisua
 The screen that had until now only displayed static suddenly flashed into life, displaying scrolling text containing statistical data about humidity, graphs charting relative closeness to other planets and stars, and what looked like a plot for a course to a somewhat nearby planet.
 The speaker next to the screen which, as the robot noted, apparently had been rudely ignoring him while he had tried to communicate with it during the trip started saying strange things the robot had never heard of. \"Suitable candidate for project SUSTAIN detected\", it blared. 
 \"M-Class Planet detected. Initiating late-stage course alteration, pattern 2-2-Delta. Prepare for highly treacherous atmospheric re-entry.  Have a good day.\" it said."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text4" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -501,11 +511,14 @@ size_flags_vertical = 8
 text = "Or had he heard these words before? A sudden sting of clarity unlocked something in his mind at the sight of the planet chart, and at the word \"M-Class Planet\". He couldn't vocalize to himself exactly what the insight had been, but somehow he felt an even closer bond to the sapling.
 He suddenly realized that now he also knew that the cargo of the ship was of utmost importance to him once he had landed. He would have to bring it, and the sapling to a place where there was plant-life. Were they maybe going on a picnic?
 As the ship took a hard banking motion to his right, and the nose cone started changing color to a bright cherry red from the sudden atmospheric resistance, he thought to himself that he would continue planning their outing later, this was not going to be an easy landing."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text5" type="Label" parent="."]
+z_index = 1
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -521,6 +534,8 @@ size_flags_vertical = 8
 text = "The sapling had survived. That was the most important thing to the robot. The passenger capsule was practically unharmed, which surprised the small robot when he took into account that the whole ship had been torn into two pieces at about 30000 feet. 
 The storage compartment had not been so lucky however, and according to the current readouts on the console in the capsule its contents had been spread across the path which the ship had taken down to the surface. By some insane stroke of luck however, the small robot found that he had landed close to an abandoned rowboat.
 He quickly formulated a plan."
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -541,6 +556,8 @@ size_flags_vertical = 8
 text = "The small robot now had an adventure ahead of him, something he had been dreaming of for what seemed like an eternity in the cramped capsule. Scour the seas of the strange planet in search of the missing cargo. Help the sapling get to the picnic in the park. Something about a princess?
 It was time to get to work. He placed the saplings containment pod on his head, and gripped the oarhandles. \"Onward, to adventure!\" he said, to noone but himself, the sapling, and the vast open seas...
 "
+horizontal_alignment = 1
+vertical_alignment = 1
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
