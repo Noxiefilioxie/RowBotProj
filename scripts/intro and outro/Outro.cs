@@ -84,6 +84,8 @@ public partial class Outro : Node2D
 		{
 			Birds.Play();
 			End.Visible = true;
+			Text4.Visible = false;
+
 			AnimationPlayer.Play("End");
 			Sprite.Play("5");
 		}

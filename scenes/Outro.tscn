@@ -205,6 +205,22 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="Animation" id="Animation_hx0oe"]
+resource_name = "End"
+length = 20.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../End:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(10.4, 16.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+
 [sub_resource type="Animation" id="Animation_yb43v"]
 length = 0.001
 tracks/0/type = "value"
@@ -332,22 +348,6 @@ tracks/0/keys = {
 "values": [0.0, 1.0]
 }
 
-[sub_resource type="Animation" id="Animation_hx0oe"]
-resource_name = "End"
-length = 20.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../End:modulate")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(10.4, 16.4),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_ec6fr"]
 _data = {
 "End": SubResource("Animation_hx0oe"),
@@ -389,7 +389,6 @@ volume_db = -20.0
 autoplay = true
 
 [node name="Panel" type="Panel" parent="."]
-modulate = Color(1, 1, 1, 0.443137)
 offset_left = 4.0
 offset_top = 940.0
 offset_right = 1922.0
