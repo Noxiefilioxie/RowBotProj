@@ -358,12 +358,13 @@ _data = {
 "Text4": SubResource("Animation_vmkny")
 }
 
-[node name="Outro" type="Node2D" node_paths=PackedStringArray("Sprite", "AnimationPlayer", "Birds", "End", "Text1", "Text2", "Text3", "Text4")]
+[node name="Outro" type="Node2D" node_paths=PackedStringArray("Sprite", "AnimationPlayer", "Birds", "Panel", "End", "Text1", "Text2", "Text3", "Text4")]
 script = ExtResource("1_bxav1")
 Sprite = NodePath("AnimatedSprite2D")
 StartScene = ExtResource("2_hy3ag")
 AnimationPlayer = NodePath("AnimationPlayer")
 Birds = NodePath("Bird")
+Panel = NodePath("Panel")
 End = NodePath("End")
 Text1 = NodePath("Text1")
 Text2 = NodePath("Text2")

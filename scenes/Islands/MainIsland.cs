@@ -15,6 +15,7 @@ public partial class MainIsland : Node2D
 
 
 		Finish.Visible = false;
+		Finish.GetChild<CollisionShape2D>(0).Disabled = true;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -22,6 +23,7 @@ public partial class MainIsland : Node2D
 	{
 		if(Player.items == 5)
 		{
+			Finish.GetChild<CollisionShape2D>(0).Disabled = false;
 			Finish.Visible = true;
 		}
 

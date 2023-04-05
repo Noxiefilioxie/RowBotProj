@@ -214,6 +214,7 @@ z_index = 1
 script = ExtResource("1_i0mjc")
 
 [node name="Area2D" type="Area2D" parent="." groups=["LAND"]]
+visible = false
 position = Vector2(325, 135)
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Area2D"]
