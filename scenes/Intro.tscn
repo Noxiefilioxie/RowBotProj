@@ -570,3 +570,10 @@ volume_db = -20.0
 [node name="Wave" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("14_wxn5a")
 volume_db = -20.0
+
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.592157)
+offset_left = -1.0
+offset_top = 895.0
+offset_right = 1919.0
+offset_bottom = 1085.0

@@ -388,6 +388,13 @@ stream = ExtResource("9_snwwq")
 volume_db = -20.0
 autoplay = true
 
+[node name="Panel" type="Panel" parent="."]
+modulate = Color(1, 1, 1, 0.443137)
+offset_left = 4.0
+offset_top = 940.0
+offset_right = 1922.0
+offset_bottom = 1078.0
+
 [node name="Text1" type="Label" parent="."]
 offset_left = 348.0
 offset_top = 940.0
