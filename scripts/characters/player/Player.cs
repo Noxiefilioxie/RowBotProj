@@ -30,6 +30,8 @@ public partial class Player : CharacterBody2D
 	private AudioStreamPlayer2D threadsSFX;
 	private AudioStreamPlayer2D pickupItemSFX;
 
+    private AudioStreamPlayer2D WaveAudio;
+
 
 	private float rowForce = 10f;
 	private float maxRowSpeed = 5;
@@ -52,6 +54,7 @@ public partial class Player : CharacterBody2D
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
 		pickupItemSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Pickup");
+        WaveAudio = GetNode<AudioStreamPlayer2D>("Player/SFX/WaveAudio");
 
 
         Compass = GetNode<Node2D>("UI/Compass/CompassNeedle");
@@ -162,6 +165,7 @@ public partial class Player : CharacterBody2D
         if (!IsOnLand)
         {
   	        BoatMovement(delta, direction);
+            WaveAudio.VolumeDb = -20;
 			previousIsOnLand = false;
         }
         else
@@ -171,6 +175,7 @@ public partial class Player : CharacterBody2D
                 velocity = Vector2.Zero; // Reset the boat's velocity
                 previousIsOnLand = true;
             }
+             WaveAudio.VolumeDb = -30;
             LandMovement(delta, direction);
         }
     }
@@ -250,7 +255,7 @@ public partial class Player : CharacterBody2D
 		if(area.IsInGroup("LAND"))
 		{
 			GD.Print("ON LAND");
-
+        
 			IsOnLand = true;
 			IsRowing = false;
 		}
