@@ -7,7 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://bola7jy73wh7h" path="res://assets/images/other/Intro frames/row-bot-introframe3.png" id="3_ia5pq"]
 [ext_resource type="Texture2D" uid="uid://bus8bsktjjmip" path="res://assets/images/other/Intro frames/row-bot-introframe4.png" id="4_jn22n"]
 [ext_resource type="Texture2D" uid="uid://4m2lof725vfe" path="res://assets/images/other/Intro frames/row-bot-introframe6.png" id="5_2wk1w"]
-[ext_resource type="Texture2D" uid="uid://c2dq02xmp40o6" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
+[ext_resource type="Texture2D" uid="uid://b6spducdvv1oe" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q5mg"]
 atlas = ExtResource("1_os1b6")
@@ -114,7 +114,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5jgka")
 }],
-"loop": true,
+"loop": false,
 "name": &"1",
 "speed": 5.0
 }, {
@@ -122,7 +122,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oblmb")
 }],
-"loop": true,
+"loop": false,
 "name": &"2",
 "speed": 5.0
 }, {
@@ -139,7 +139,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mcchd")
 }],
-"loop": true,
+"loop": false,
 "name": &"3",
 "speed": 5.0
 }, {
@@ -177,7 +177,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gmdti")
 }],
-"loop": true,
+"loop": false,
 "name": &"4",
 "speed": 5.0
 }, {
@@ -197,7 +197,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jxd0q")
 }],
-"loop": true,
+"loop": false,
 "name": &"5",
 "speed": 5.0
 }, {
@@ -205,21 +205,31 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sulh2")
 }],
-"loop": true,
+"loop": false,
 "name": &"6",
 "speed": 5.0
 }]
 
-[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite")]
+[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite", "StoryText")]
 script = ExtResource("1_ltqed")
 Sprite = NodePath("AnimatedSprite2D")
 MainScene = ExtResource("2_m6bd8")
+StoryText = NodePath("StoryText")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(960, 536.375)
 scale = Vector2(7.93333, 7.87593)
 sprite_frames = SubResource("SpriteFrames_nb1ql")
-animation = &"4"
-frame_progress = 0.596991
+animation = &"6"
+
+[node name="StoryText" type="Label" parent="."]
+offset_left = 112.0
+offset_top = 804.0
+offset_right = 1755.0
+offset_bottom = 970.0
+text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Et netus et malesuada fames ac turpis. Tincidunt lobortis feugiat vivamus at augue eget. Nunc mi ipsum faucibus vitae aliquet. Vel eros donec ac odio tempor orci dapibus ultrices. Sed viverra ipsum nunc aliquet bibendum enim facilisis gravida neque. Velit egestas dui id ornare arcu odio ut sem. Sit amet commodo nulla facilisi nullam vehicula ipsum a arcu. Integer feugiat scelerisque varius morbi enim nunc. Dictumst vestibulum rhoncus est pellentesque. Arcu felis bibendum ut tristique et egestas. Cursus metus aliquam eleifend mi. Ac odio tempor orci dapibus ultrices in iaculis. Dictum at tempor commodo ullamcorper a lacus vestibulum sed. Amet mauris commodo quis imperdiet massa tincidunt. Euismod quis viverra nibh cras pulvinar mattis nunc sed. Commodo viverra maecenas accumsan lacus vel facilisis volutpat est."
+autowrap_mode = 3
+visible_characters = 0
+visible_ratio = 0.0
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
