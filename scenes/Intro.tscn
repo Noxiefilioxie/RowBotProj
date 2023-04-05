@@ -7,7 +7,12 @@
 [ext_resource type="Texture2D" uid="uid://bola7jy73wh7h" path="res://assets/images/other/Intro frames/row-bot-introframe3.png" id="3_ia5pq"]
 [ext_resource type="Texture2D" uid="uid://bus8bsktjjmip" path="res://assets/images/other/Intro frames/row-bot-introframe4.png" id="4_jn22n"]
 [ext_resource type="Texture2D" uid="uid://4m2lof725vfe" path="res://assets/images/other/Intro frames/row-bot-introframe6.png" id="5_2wk1w"]
+<<<<<<< HEAD
+[ext_resource type="Texture2D" uid="uid://b6spducdvv1oe" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
+=======
 [ext_resource type="Texture2D" uid="uid://c2dq02xmp40o6" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
+[ext_resource type="AudioStream" uid="uid://1djcalu0dw08" path="res://assets/sounds/music/Intro.mp3" id="9_mmp4c"]
+>>>>>>> c090c3ca96da509ed87af5dfc356166029250bae
 
 [sub_resource type="Animation" id="Animation_q68q6"]
 resource_name = "Text1"
@@ -150,7 +155,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_5jgka")
 }],
-"loop": true,
+"loop": false,
 "name": &"1",
 "speed": 5.0
 }, {
@@ -158,7 +163,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_oblmb")
 }],
-"loop": true,
+"loop": false,
 "name": &"2",
 "speed": 5.0
 }, {
@@ -175,7 +180,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_mcchd")
 }],
-"loop": true,
+"loop": false,
 "name": &"3",
 "speed": 5.0
 }, {
@@ -213,7 +218,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_gmdti")
 }],
-"loop": true,
+"loop": false,
 "name": &"4",
 "speed": 5.0
 }, {
@@ -233,7 +238,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_jxd0q")
 }],
-"loop": true,
+"loop": false,
 "name": &"5",
 "speed": 5.0
 }, {
@@ -241,7 +246,7 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_sulh2")
 }],
-"loop": true,
+"loop": false,
 "name": &"6",
 "speed": 5.0
 }]

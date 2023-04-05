@@ -1,5 +1,6 @@
 using Godot;
 using System;
+using System.Security.Cryptography.X509Certificates;
 
 public partial class Intro : Node2D
 {
@@ -12,9 +13,9 @@ public partial class Intro : Node2D
 	[Export]
 	public AnimationPlayer AnimationPlayer;
 
-	// Called when the node enters the scene tree for the first time.
-	public override void _Ready()
-	{
+    // Called when the node enters the scene tree for the first time.
+    public override void _Ready()
+    {
 
 		Sprite.Play("1");
 		AnimationPlayer.Play("Text1");
@@ -34,8 +35,10 @@ public partial class Intro : Node2D
 		{
 			GetTree().ChangeSceneToFile(MainScene.ResourcePath);
 
-		}
-	}
+        //}
+        if (!Sprite.IsPlaying())
+        {
+            GetTree().ChangeSceneToFile(MainScene.ResourcePath);
 
 
     private void OnAnimationFinished(StringName animName)
