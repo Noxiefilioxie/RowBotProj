@@ -26,16 +26,16 @@ public partial class Intro : Node2D
 
 	[Export]
 	public AudioStreamPlayer Rocket;
-
+	
 	[Export]
 	public AudioStreamPlayer Interior;
 
 	[Export]
 	public AudioStreamPlayer Terminal;
-		[Export]
+	[Export]
 	public AudioStreamPlayer Fire;
 
-			[Export]
+	[Export]
 	public AudioStreamPlayer Wave;
 
 
