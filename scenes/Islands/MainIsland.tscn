@@ -209,7 +209,7 @@ size = Vector2(208.5, 4)
 [sub_resource type="CircleShape2D" id="CircleShape2D_vw2qe"]
 radius = 34.5254
 
-[node name="MainIsland" type="Node2D" groups=["ISLAND"]]
+[node name="MainIsland" type="Node2D" groups=["MAINISLAND"]]
 z_index = 1
 script = ExtResource("1_i0mjc")
 

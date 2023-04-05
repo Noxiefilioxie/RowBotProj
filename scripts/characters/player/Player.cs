@@ -65,6 +65,10 @@ public partial class Player : CharacterBody2D
 
         var islandItem = GetTree().GetNodesInGroup("ISLANDITEM");
 
+        var island = GetTree().GetNodesInGroup("MAINISLAND");
+
+        var islandmain = (Node2D)island.FirstOrDefault();
+
         var itemsLeft = new List<Node2D>();
 
         foreach (var item in islandItem)
@@ -73,13 +77,15 @@ public partial class Player : CharacterBody2D
         }
         if(itemsLeft.Count == 0)
         {
-            GD.PushError("No items left");
+            var angle = GlobalPosition.AngleToPoint(islandmain.GlobalPosition);
+            Compass.GlobalRotation = angle;
+            GD.Print("No items left");
         }
         else
         {
-              var closestItem = itemsLeft.OrderBy(x => x.GlobalPosition.DistanceTo(GlobalPosition)).First();
+            var closestItem = itemsLeft.OrderBy(x => x.GlobalPosition.DistanceTo(GlobalPosition)).First();
             var angle = GlobalPosition.AngleToPoint(closestItem.GlobalPosition);
-                 Compass.GlobalRotation = angle;
+            Compass.GlobalRotation = angle;
         }
 
 
