@@ -433,9 +433,9 @@ libraries = {
 
 [node name="Text1" type="Label" parent="."]
 offset_left = 288.0
-offset_top = 1021.0
+offset_top = 902.0
 offset_right = 1538.0
-offset_bottom = 1073.0
+offset_bottom = 1028.0
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 text = "Once upon a time, a small spaceship was hurtling through the infinite void of space. 
 For days, weeks, months, perhaps even years the ship had been on its way to an unknown goal."
@@ -444,16 +444,15 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text2" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 296.0
-offset_top = 969.0
+offset_top = 902.0
 offset_right = 1546.0
-offset_bottom = 1073.0
+offset_bottom = 1043.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -466,16 +465,15 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text3" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 295.0
-offset_top = 1024.0
+offset_top = 903.0
 offset_right = 1545.0
-offset_bottom = 1076.0
+offset_bottom = 1043.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -488,16 +486,15 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text4" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 295.0
-offset_top = 1024.0
+offset_top = 911.0
 offset_right = 1545.0
-offset_bottom = 1076.0
+offset_bottom = 1049.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -509,16 +506,15 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text5" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
 offset_left = 297.0
-offset_top = 920.0
+offset_top = 906.0
 offset_right = 1547.0
-offset_bottom = 1076.0
+offset_bottom = 1035.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
@@ -530,7 +526,6 @@ visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text6" type="Label" parent="."]
-visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
@@ -539,7 +534,7 @@ anchor_bottom = 1.0
 offset_left = 302.0
 offset_top = 909.0
 offset_right = 1552.0
-offset_bottom = 1013.0
+offset_bottom = 1048.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
