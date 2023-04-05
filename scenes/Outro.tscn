@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://crfg3v8n8fvao"]
+[gd_scene load_steps=5 format=3 uid="uid://crfg3v8n8fvao"]
 
 [ext_resource type="Script" path="res://scripts/intro and outro/Outro.cs" id="1_bxav1"]
 [ext_resource type="PackedScene" uid="uid://cvq4anx5ddc0b" path="res://scenes/Startmenu.tscn" id="2_hy3ag"]
+[ext_resource type="AudioStream" uid="uid://dxuc2hn7gaoum" path="res://assets/sounds/music/Outro.ogg" id="3_7fta7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0r8ql"]
 animations = [{
@@ -22,3 +23,7 @@ scale = Vector2(33.4559, 8.9963)
 sprite_frames = SubResource("SpriteFrames_0r8ql")
 animation = &"1"
 frame_progress = 0.784012
+
+[node name="Outro" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_7fta7")
+autoplay = true

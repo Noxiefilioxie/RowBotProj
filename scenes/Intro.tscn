@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://eowf6k4q5t8c"]
+[gd_scene load_steps=35 format=3 uid="uid://eowf6k4q5t8c"]
 
 [ext_resource type="Script" path="res://scripts/intro and outro/Intro.cs" id="1_ltqed"]
 [ext_resource type="Texture2D" uid="uid://4a4bflbl5koo" path="res://assets/images/other/Intro frames/row-bot-introframe1.png" id="1_os1b6"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bus8bsktjjmip" path="res://assets/images/other/Intro frames/row-bot-introframe4.png" id="4_jn22n"]
 [ext_resource type="Texture2D" uid="uid://4m2lof725vfe" path="res://assets/images/other/Intro frames/row-bot-introframe6.png" id="5_2wk1w"]
 [ext_resource type="Texture2D" uid="uid://c2dq02xmp40o6" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
+[ext_resource type="AudioStream" uid="uid://1djcalu0dw08" path="res://assets/sounds/music/Intro.mp3" id="9_mmp4c"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q5mg"]
 atlas = ExtResource("1_os1b6")
@@ -221,5 +222,9 @@ scale = Vector2(7.93333, 7.87593)
 sprite_frames = SubResource("SpriteFrames_nb1ql")
 animation = &"4"
 frame_progress = 0.596991
+
+[node name="IntroMusic" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("9_mmp4c")
+autoplay = true
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

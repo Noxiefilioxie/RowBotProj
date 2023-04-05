@@ -13,7 +13,7 @@ public partial class Intro : Node2D
 	public override void _Ready()
 	{
 
-
+		Sprite.Play("1");
 
 	}
 
