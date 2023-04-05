@@ -70,7 +70,7 @@ height = 97.0
 [sub_resource type="CircleShape2D" id="CircleShape2D_7x3xh"]
 radius = 15.6206
 
-[node name="SecondIsland" type="Node2D" groups=["LAND"]]
+[node name="SecondIsland" type="Node2D" groups=["ISLAND"]]
 
 [node name="Area2D" type="Area2D" parent="." groups=["LAND"]]
 z_index = -1
@@ -240,5 +240,5 @@ layer_0/tile_data = PackedInt32Array(131080, 65537, 1, 131081, 131073, 1, 65544,
 visible = false
 position = Vector2(312, 102)
 
-[node name="Monitor" parent="." instance=ExtResource("3_swf1e")]
+[node name="Monitor" parent="." groups=["ISLANDITEM"] instance=ExtResource("3_swf1e")]
 position = Vector2(661, 842)

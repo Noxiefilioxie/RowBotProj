@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cbu4q78b85xby"]
+
+[ext_resource type="Texture2D" uid="uid://fofrfv2luyin" path="res://assets/images/other/Compass/rowbot-compass-needle.png" id="1_emdgl"]
+
+[node name="CompassNeedle" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_emdgl")

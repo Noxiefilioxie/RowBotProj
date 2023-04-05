@@ -1,6 +1,8 @@
 using Godot;
 using RowBot.scripts.inventory;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
 public partial class Player : CharacterBody2D
 {
@@ -33,6 +35,8 @@ public partial class Player : CharacterBody2D
 	private float maxRowSpeed = 5;
 	private Vector2 velocity = Vector2.Zero;
 
+    private Node2D Compass;
+
 
 
 
@@ -48,10 +52,33 @@ public partial class Player : CharacterBody2D
         rowSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Row");
 		threadsSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/ThreadsMove");
 		pickupItemSFX = GetNode<AudioStreamPlayer2D>("Player/SFX/Pickup");
+
+
+        Compass = GetNode<Node2D>("UI/Compass/CompassNeedle");
     }
 
-    public override void _Process(double delda)
+    public override void _Process(double delta)
 	{
+
+        var islandItem = GetTree().GetNodesInGroup("ISLANDITEM");
+
+        var itemsLeft = new List<Node2D>();
+
+        foreach (var item in islandItem)
+        {
+            itemsLeft.Add((Node2D)item);
+        }
+        if(itemsLeft.Count == 0)
+        {
+            GD.PushError("No items left");
+        }
+        else
+        {
+              var closestItem = itemsLeft.OrderBy(x => x.GlobalPosition.DistanceTo(GlobalPosition)).First();
+            var angle = GlobalPosition.AngleToPoint(closestItem.GlobalPosition);
+                 Compass.GlobalRotation = angle;
+        }
+
 
 	}
 
