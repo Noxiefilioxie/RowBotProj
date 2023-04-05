@@ -50,7 +50,7 @@ sources/1 = SubResource("TileSetAtlasSource_ldoph")
 sources/2 = SubResource("TileSetAtlasSource_0eq6q")
 sources/3 = SubResource("TileSetAtlasSource_l1m1b")
 
-[node name="ThirdIsland" type="Node2D"]
+[node name="ThirdIsland" type="Node2D" groups=["ISLAND"]]
 z_index = 1
 
 [node name="Area2D" type="Area2D" parent="."]
@@ -312,6 +312,6 @@ z_index = 1
 position = Vector2(146, 167)
 polygon = PackedVector2Array(870, 743, 886, 754, 864, 767, 883, 784, 933, 782, 935, 748, 928, 721, 901, 720, 875, 723)
 
-[node name="Battery" parent="." instance=ExtResource("8_hc4co")]
+[node name="Battery" parent="." groups=["ISLANDITEM"] instance=ExtResource("8_hc4co")]
 z_index = 1
 position = Vector2(391, 1025)
