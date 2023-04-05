@@ -15,7 +15,7 @@ public partial class Intro : Node2D
 
 
 
-		Sprite.Play();
+		Sprite.Play("1");
 	
 
 	}
