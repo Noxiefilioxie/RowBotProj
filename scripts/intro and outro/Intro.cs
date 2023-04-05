@@ -5,6 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 public partial class Intro : Node2D
 {
 
+<<<<<<< HEAD
     [Export]
     public AnimatedSprite2D Sprite;
     [Export]
@@ -51,5 +52,29 @@ public partial class Intro : Node2D
     {
         GD.Print("FInished");
     }
+=======
+	[Export]
+	public AnimatedSprite2D Sprite;
+	[Export]
+	public PackedScene MainScene;
+
+	// Called when the node enters the scene tree for the first time.
+	public override void _Ready()
+	{
+
+		Sprite.Play("1");
+
+	}
+
+	// Called every frame. 'delta' is the elapsed time since the previous frame.
+	public override void _Process(double delta)
+	{
+		if (!Sprite.IsPlaying())
+		{
+			GetTree().ChangeSceneToFile(MainScene.ResourcePath);
+
+		}
+	}
+>>>>>>> c090c3ca96da509ed87af5dfc356166029250bae
 
 }
