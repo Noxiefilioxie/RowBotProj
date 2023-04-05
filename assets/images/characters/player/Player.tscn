@@ -1,4 +1,4 @@
-[gd_scene load_steps=80 format=3 uid="uid://dew43wrchwvhu"]
+[gd_scene load_steps=81 format=3 uid="uid://dew43wrchwvhu"]
 
 [ext_resource type="Script" path="res://scripts/characters/player/Player.cs" id="1_vpmjk"]
 [ext_resource type="Texture2D" uid="uid://cww8jfasysi0a" path="res://assets/images/characters/rowboat_robot_feet.png" id="2_d5nci"]
@@ -16,6 +16,7 @@
 [ext_resource type="AudioStream" uid="uid://bwe0b6v754kt7" path="res://assets/sounds/sfx/robot1.ogg" id="14_i5im6"]
 [ext_resource type="Texture2D" uid="uid://53gt0r4nl0ix" path="res://assets/images/other/Compass/rowbot-compass-dial.png" id="14_m7hct"]
 [ext_resource type="PackedScene" uid="uid://cbu4q78b85xby" path="res://CompassNeedle.tscn" id="15_nt1yu"]
+[ext_resource type="PackedScene" uid="uid://dij6wxte0w2hi" path="res://scenes/BackgroundMusic.tscn" id="17_0e7ph"]
 
 [sub_resource type="Animation" id="Animation_80hgm"]
 resource_name = "Idle"
@@ -747,6 +748,8 @@ texture = ExtResource("14_m7hct")
 
 [node name="CompassNeedle" parent="UI/Compass" instance=ExtResource("15_nt1yu")]
 position = Vector2(32, 32)
+
+[node name="BackgroundMusic" parent="." instance=ExtResource("17_0e7ph")]
 
 [connection signal="area_entered" from="LandCheck" to="." method="_on_land_check_area_entered"]
 [connection signal="area_exited" from="LandCheck" to="." method="_on_land_check_area_exited"]

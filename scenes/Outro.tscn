@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/intro and outro/Outro.cs" id="1_bxav1"]
 [ext_resource type="PackedScene" uid="uid://cvq4anx5ddc0b" path="res://scenes/Startmenu.tscn" id="2_hy3ag"]
-[ext_resource type="AudioStream" uid="uid://dxuc2hn7gaoum" path="res://assets/sounds/music/Outro.ogg" id="3_7fta7"]
+[ext_resource type="AudioStream" path="res://assets/sounds/music/Outro.ogg" id="3_7fta7"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0r8ql"]
 animations = [{
