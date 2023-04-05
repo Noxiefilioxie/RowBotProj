@@ -1,196 +1,19 @@
-[gd_scene load_steps=43 format=3 uid="uid://eowf6k4q5t8c"]
+[gd_scene load_steps=48 format=3 uid="uid://eowf6k4q5t8c"]
 
 [ext_resource type="Script" path="res://scripts/intro and outro/Intro.cs" id="1_ltqed"]
 [ext_resource type="Texture2D" uid="uid://4a4bflbl5koo" path="res://assets/images/other/Intro frames/row-bot-introframe1.png" id="1_os1b6"]
 [ext_resource type="Texture2D" uid="uid://7c57avlqpvgu" path="res://assets/images/other/Intro frames/row-bot-introframe2.png" id="2_llj4y"]
 [ext_resource type="PackedScene" uid="uid://cy3mw852vhbq6" path="res://scenes/levels/Main.tscn" id="2_m6bd8"]
+[ext_resource type="AudioStream" uid="uid://kgassqlpni6v" path="res://assets/sounds/sfx/IntroSFX/rocket_01.ogg" id="3_2ca3k"]
 [ext_resource type="Texture2D" uid="uid://bola7jy73wh7h" path="res://assets/images/other/Intro frames/row-bot-introframe3.png" id="3_ia5pq"]
 [ext_resource type="Texture2D" uid="uid://bus8bsktjjmip" path="res://assets/images/other/Intro frames/row-bot-introframe4.png" id="4_jn22n"]
 [ext_resource type="Texture2D" uid="uid://4m2lof725vfe" path="res://assets/images/other/Intro frames/row-bot-introframe6.png" id="5_2wk1w"]
 [ext_resource type="Texture2D" uid="uid://c2dq02xmp40o6" path="res://assets/images/other/Intro frames/row-bot-introframe5.png" id="7_ql0hj"]
-[ext_resource type="AudioStream" path="res://assets/sounds/music/Intro.mp3" id="9_mmp4c"]
-
-[sub_resource type="Animation" id="Animation_mfx6s"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../Text2:visible_ratio")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../Text3:visible_ratio")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/3/type = "value"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("../Text4:visible_ratio")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/4/type = "value"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("../Text5:visible_ratio")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-tracks/5/type = "value"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("../Text6:visible_ratio")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [0.0]
-}
-
-[sub_resource type="Animation" id="Animation_q68q6"]
-resource_name = "Text1"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 4.9),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_kkti0"]
-resource_name = "Text2"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text2:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_24shg"]
-resource_name = "Text3"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text3:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_ap85r"]
-resource_name = "Text4"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text4:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_napir"]
-resource_name = "Text5"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text5:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="Animation" id="Animation_alqeq"]
-resource_name = "Text6"
-length = 7.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../Text6:visible_ratio")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 5),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [0.0, 1.0]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o1oc"]
-_data = {
-"RESET": SubResource("Animation_mfx6s"),
-"Text1": SubResource("Animation_q68q6"),
-"Text2": SubResource("Animation_kkti0"),
-"Text3": SubResource("Animation_24shg"),
-"Text4": SubResource("Animation_ap85r"),
-"Text5": SubResource("Animation_napir"),
-"Text6": SubResource("Animation_alqeq")
-}
+[ext_resource type="AudioStream" uid="uid://1djcalu0dw08" path="res://assets/sounds/music/Intro.mp3" id="9_mmp4c"]
+[ext_resource type="AudioStream" uid="uid://bodk1hnvd481d" path="res://assets/sounds/sfx/IntroSFX/loop_ambient_01.ogg" id="11_x6v3v"]
+[ext_resource type="AudioStream" uid="uid://bqgj0qt8jw2hx" path="res://assets/sounds/sfx/IntroSFX/terminal_07.ogg" id="12_1kxc5"]
+[ext_resource type="AudioStream" uid="uid://5k5gug5o30y3" path="res://assets/sounds/sfx/IntroSFX/fire-1.ogg" id="13_vpmfm"]
+[ext_resource type="AudioStream" uid="uid://banw46u248ghl" path="res://assets/sounds/sfx/Vistula.mp3" id="14_wxn5a"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_6q5mg"]
 atlas = ExtResource("1_os1b6")
@@ -393,7 +216,189 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite", "AnimationPlayer", "Text1", "Text2", "Text3", "Text4", "Text5", "Text6")]
+[sub_resource type="Animation" id="Animation_mfx6s"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../Text2:visible_ratio")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../Text3:visible_ratio")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("../Text4:visible_ratio")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("../Text5:visible_ratio")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("../Text6:visible_ratio")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_q68q6"]
+resource_name = "Text1"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4.9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_kkti0"]
+resource_name = "Text2"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text2:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_24shg"]
+resource_name = "Text3"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text3:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_ap85r"]
+resource_name = "Text4"
+length = 10.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text4:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_napir"]
+resource_name = "Text5"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text5:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="Animation" id="Animation_alqeq"]
+resource_name = "Text6"
+length = 12.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../Text6:visible_ratio")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_2o1oc"]
+_data = {
+"RESET": SubResource("Animation_mfx6s"),
+"Text1": SubResource("Animation_q68q6"),
+"Text2": SubResource("Animation_kkti0"),
+"Text3": SubResource("Animation_24shg"),
+"Text4": SubResource("Animation_ap85r"),
+"Text5": SubResource("Animation_napir"),
+"Text6": SubResource("Animation_alqeq")
+}
+
+[node name="Intro" type="Node2D" node_paths=PackedStringArray("Sprite", "AnimationPlayer", "Text1", "Text2", "Text3", "Text4", "Text5", "Text6", "Rocket", "Interior", "Terminal", "Fire", "Wave")]
 script = ExtResource("1_ltqed")
 Sprite = NodePath("AnimatedSprite2D")
 MainScene = ExtResource("2_m6bd8")
@@ -404,6 +409,21 @@ Text3 = NodePath("Text3")
 Text4 = NodePath("Text4")
 Text5 = NodePath("Text5")
 Text6 = NodePath("Text6")
+Rocket = NodePath("Rocket")
+Interior = NodePath("Interior")
+Terminal = NodePath("Monitor")
+Fire = NodePath("Fire")
+Wave = NodePath("Wave")
+
+[node name="Rocket" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_2ca3k")
+pitch_scale = 0.5
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(957.5, 542.375)
+scale = Vector2(7.95416, 7.96482)
+sprite_frames = SubResource("SpriteFrames_nb1ql")
+animation = &"5"
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 root_node = NodePath("../Text1")
@@ -411,109 +431,120 @@ libraries = {
 "": SubResource("AnimationLibrary_2o1oc")
 }
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(960, 536.375)
-scale = Vector2(7.93333, 7.87593)
-sprite_frames = SubResource("SpriteFrames_nb1ql")
-animation = &"4"
-frame = 10
-frame_progress = 1.0
-
 [node name="Text1" type="Label" parent="."]
-offset_top = 1016.0
-offset_right = 1920.0
-offset_bottom = 1068.0
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+offset_left = 288.0
+offset_top = 1021.0
+offset_right = 1538.0
+offset_bottom = 1073.0
+text = "Once upon a time, a small spaceship was hurtling through the infinite void of space. 
+For days, weeks, months, perhaps even years the ship had been on its way to an unknown goal."
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text2" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 1017.0
-offset_right = 1910.0
-offset_bottom = 1069.0
+offset_left = 296.0
+offset_top = 969.0
+offset_right = 1546.0
+offset_bottom = 1073.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "Inside the small passenger capsule sat an egg-shaped robot. He was bored. 
+At least he thought so, robots of the same model as him were not really supposed to gain self-awareness; But it was a known risk of their particular logic circuits when left unmaintained for long periods of time.
+And the small robot had truly been left unmaintained. Since his owners had put him into the passenger compartment, his only travel companion had been a small sapling in a glass dome.
+The small robot couldn't really complain though, as for some to him unknown reason he felt a special bond to the plant. Almost as if it was his younger brother, or a close friend he had once lost and now found again."
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text3" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 1017.0
-offset_right = 1910.0
-offset_bottom = 1069.0
+offset_left = 295.0
+offset_top = 1024.0
+offset_right = 1545.0
+offset_bottom = 1076.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "Suddenly, the eternal boredom of nothingness was broken by an audiovisual cacaphony taking place on the control panel in front of the small robot. 
+The screen that had until now only displayed static suddenly flashed into life, displaying scrolling text containing statistical data about humidity, graphs charting relative closeness to other planets and stars, and what looked like a plot for a course to a somewhat nearby planet.
+The speaker next to the screen which, as the robot noted, apparently had been rudely ignoring him while he had tried to communicate with it during the trip started saying strange things the robot had never heard of. \"Suitable candidate for project SUSTAIN detected\", it blared. 
+\"M-Class Planet detected. Initiating late-stage course alteration, pattern 2-2-Delta. Prepare for highly treacherous atmospheric re-entry.  Have a good day.\" it said."
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text4" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 1017.0
-offset_right = 1910.0
-offset_bottom = 1069.0
+offset_left = 295.0
+offset_top = 1024.0
+offset_right = 1545.0
+offset_bottom = 1076.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "Or had he heard these words before? A sudden sting of clarity unlocked something in his mind at the sight of the planet chart, and at the word \"M-Class Planet\". He couldn't vocalize to himself exactly what the insight had been, but somehow he felt an even closer bond to the sapling.
+He suddenly realized that now he also knew that the cargo of the ship was of utmost importance to him once he had landed. He would have to bring it, and the sapling to a place where there was plant-life. Were they maybe going on a picnic?
+As the ship took a hard banking motion to his right, and the nose cone started changing color to a bright cherry red from the sudden atmospheric resistance, he thought to himself that he would continue planning their outing later, this was not going to be an easy landing."
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text5" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 1017.0
-offset_right = 1910.0
-offset_bottom = 1069.0
+offset_left = 297.0
+offset_top = 920.0
+offset_right = 1547.0
+offset_bottom = 1076.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "The sapling had survived. That was the most important thing to the robot. The passenger capsule was practically unharmed, which surprised the small robot when he took into account that the whole ship had been torn into two pieces at about 30000 feet. 
+The storage compartment had not been so lucky however, and according to the current readouts on the console in the capsule its contents had been spread across the path which the ship had taken down to the surface. By some insane stroke of luck however, the small robot found that he had landed close to an abandoned rowboat.
+He quickly formulated a plan."
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
 
 [node name="Text6" type="Label" parent="."]
+visible = false
 anchors_preset = 7
 anchor_left = 0.5
 anchor_top = 1.0
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -3.0
-offset_top = 1017.0
-offset_right = 1910.0
-offset_bottom = 1069.0
+offset_left = 302.0
+offset_top = 909.0
+offset_right = 1552.0
+offset_bottom = 1013.0
 grow_horizontal = 2
 grow_vertical = 0
 size_flags_vertical = 8
-text = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+text = "The small robot now had an adventure ahead of him, something he had been dreaming of for what seemed like an eternity in the cramped capsule. Scour the seas of the strange planet in search of the missing cargo. Help the sapling get to the picnic in the park. Something about a princess?
+It was time to get to work. He placed the saplings containment pod on his head, and gripped the oarhandles. \"Onward, to adventure!\" he said, to noone but himself, the sapling, and the vast open seas...
+"
 autowrap_mode = 2
 visible_characters = 0
 visible_ratio = 0.0
@@ -522,3 +553,19 @@ visible_ratio = 0.0
 stream = ExtResource("9_mmp4c")
 volume_db = -20.0
 autoplay = true
+
+[node name="Interior" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("11_x6v3v")
+volume_db = -20.0
+
+[node name="Monitor" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_1kxc5")
+volume_db = -20.0
+
+[node name="Fire" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("13_vpmfm")
+volume_db = -20.0
+
+[node name="Wave" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_wxn5a")
+volume_db = -20.0

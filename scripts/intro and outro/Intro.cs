@@ -24,6 +24,22 @@ public partial class Intro : Node2D
 	[Export]
 	public Label Text6;
 
+	[Export]
+	public AudioStreamPlayer Rocket;
+
+	[Export]
+	public AudioStreamPlayer Interior;
+
+	[Export]
+	public AudioStreamPlayer Terminal;
+		[Export]
+	public AudioStreamPlayer Fire;
+
+			[Export]
+	public AudioStreamPlayer Wave;
+
+
+
 
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
@@ -34,6 +50,7 @@ public partial class Intro : Node2D
 
 		Sprite.Play("1");
 		AnimationPlayer.Play("Text1");
+		Rocket.Play();
 
 		AnimationPlayer.AnimationFinished += OnAnimationFinished;
 
@@ -60,37 +77,55 @@ public partial class Intro : Node2D
 		if (animName == "Text1")
 		{
 			Text1.Visible = false;
+			Rocket.Stop();
+			Text2.Visible = true;
+			Interior.Play();
 			Sprite.Play("2");
 			AnimationPlayer.Play("Text2");
 		}
 		else if (animName == "Text2")
 		{
 			Text2.Visible = false;
-			
+			Text3.Visible = true;
 			Sprite.Play("3");
+			Interior.Stop();
+			Terminal.Play();
 			AnimationPlayer.Play("Text3");
 		}
 		else if (animName == "Text3")
 		{
+
 			Text3.Visible = false;
+			Text4.Visible = true;
+			Terminal.Stop();
+			Rocket.Play();
 			Sprite.Play("4");
 			AnimationPlayer.Play("Text4");
 		}
 		else if (animName == "Text4")
 		{
+			
 			Text4.Visible = false;
+			Text5.Visible = true;
+			Rocket.Stop();
+			Fire.Play();
 			Sprite.Play("5");
 			AnimationPlayer.Play("Text5");
 		}
 		else if (animName == "Text5")
 		{
+
 			Text5.Visible = false;
+			Text6.Visible = true;
+			Fire.Stop();
+			Wave.Play();
 			Sprite.Play("6");
 			AnimationPlayer.Play("Text6");
 		}
 		else if (animName == "Text6")
-		{			
-			GetTree().ChangeSceneToFile(MainScene.ResourcePath);
+		{		
+			Wave.Stop();	
+			GetTree().ChangeSceneToFile(MainScene.ResourcePath);			
 		}
 
     }
